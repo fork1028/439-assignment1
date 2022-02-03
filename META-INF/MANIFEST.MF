@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: 439-assignment1;singleton:=true
+Bundle-SymbolicName: ca.mcgill.emf.examples.hal;singleton:=true
 Automatic-Module-Name: ca.mcgill.emf.examples.hal
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .

@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>hal.ecore</foreignModel>
-  <genPackages prefix="Hal" basePackage="ca.mcgill.emf.example" disposableProviderFactory="true"
+  <genPackages prefix="Hal" basePackage="ca.mcgill.emf.examples" disposableProviderFactory="true"
       ecorePackage="hal.ecore#/">
     <genClasses ecoreClass="hal.ecore#//AutomationRule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hal.ecore#//AutomationRule/ruleId"/>

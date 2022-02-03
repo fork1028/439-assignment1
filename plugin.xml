@@ -10,7 +10,7 @@
       <!-- @generated hal -->
       <package
             uri="http://mcgill.ca/emf/examples/hal"
-            class="ca.mcgill.emf.example.hal.HalPackage"
+            class="ca.mcgill.emf.examples.hal.HalPackage"
             genModel="model/hal.genmodel"/>
    </extension>
 
