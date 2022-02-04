@@ -139,6 +139,15 @@ public interface HalFactory extends EFactory {
 	PreconditionComposite createPreconditionComposite();
 
 	/**
+	 * Returns a new object of class '<em>Smart Home</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Smart Home</em>'.
+	 * @generated
+	 */
+	SmartHome createSmartHome();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

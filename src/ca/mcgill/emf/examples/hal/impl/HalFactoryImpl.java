@@ -70,6 +70,7 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 			case HalPackage.ACTUATOR_DEVICE_TYPE: return createActuatorDeviceType();
 			case HalPackage.LOGIC_BOOL: return createLogicBool();
 			case HalPackage.PRECONDITION_COMPOSITE: return createPreconditionComposite();
+			case HalPackage.SMART_HOME: return createSmartHome();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -233,6 +234,16 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	public PreconditionComposite createPreconditionComposite() {
 		PreconditionCompositeImpl preconditionComposite = new PreconditionCompositeImpl();
 		return preconditionComposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SmartHome createSmartHome() {
+		SmartHomeImpl smartHome = new SmartHomeImpl();
+		return smartHome;
 	}
 
 	/**

@@ -1,5 +1,7 @@
 package ca.mcgill.emf.examples.hal.view;
 
-public class HALPage {
+import javax.swing.JFrame;
+
+public class HALPage extends JFrame{
 
 }

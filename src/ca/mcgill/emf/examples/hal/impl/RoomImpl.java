@@ -6,6 +6,7 @@ import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.SensorDeviceType;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

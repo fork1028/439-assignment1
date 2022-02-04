@@ -716,7 +716,6 @@ public interface HalPackage extends EPackage {
 	 */
 	int ACTUATOR_DEVICE_TYPE_OPERATION_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.LogicBoolImpl <em>Logic Bool</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -864,6 +863,52 @@ public interface HalPackage extends EPackage {
 	int PRECONDITION_COMPOSITE_OPERATION_COUNT = PRECONDITION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.SmartHomeImpl <em>Smart Home</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.SmartHomeImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSmartHome()
+	 * @generated
+	 */
+	int SMART_HOME = 13;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_HOME__ROOM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Home Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_HOME__HOME_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Smart Home</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_HOME_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Smart Home</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_HOME_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.Logic <em>Logic</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -871,7 +916,7 @@ public interface HalPackage extends EPackage {
 	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogic()
 	 * @generated
 	 */
-	int LOGIC = 13;
+	int LOGIC = 14;
 
 
 	/**
@@ -1456,6 +1501,38 @@ public interface HalPackage extends EPackage {
 	EReference getPreconditionComposite_Precondition();
 
 	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.SmartHome <em>Smart Home</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Smart Home</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SmartHome
+	 * @generated
+	 */
+	EClass getSmartHome();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.SmartHome#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Room</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SmartHome#getRoom()
+	 * @see #getSmartHome()
+	 * @generated
+	 */
+	EReference getSmartHome_Room();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.SmartHome#getHomeName <em>Home Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Home Name</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SmartHome#getHomeName()
+	 * @see #getSmartHome()
+	 * @generated
+	 */
+	EAttribute getSmartHome_HomeName();
+
+	/**
 	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.Logic <em>Logic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1945,6 +2022,32 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PRECONDITION_COMPOSITE__PRECONDITION = eINSTANCE.getPreconditionComposite_Precondition();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.SmartHomeImpl <em>Smart Home</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.SmartHomeImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSmartHome()
+		 * @generated
+		 */
+		EClass SMART_HOME = eINSTANCE.getSmartHome();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SMART_HOME__ROOM = eINSTANCE.getSmartHome_Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Home Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SMART_HOME__HOME_NAME = eINSTANCE.getSmartHome_HomeName();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.Logic <em>Logic</em>}' enum.

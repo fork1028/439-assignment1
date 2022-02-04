@@ -79,5 +79,9 @@
     <genClasses ecoreClass="HAL.ecore#//PreconditionComposite">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HAL.ecore#//PreconditionComposite/precondition"/>
     </genClasses>
+    <genClasses ecoreClass="HAL.ecore#//SmartHome">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HAL.ecore#//SmartHome/room"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HAL.ecore#//SmartHome/homeName"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

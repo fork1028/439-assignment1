@@ -18,6 +18,7 @@ import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.SensorDevice;
 import ca.mcgill.emf.examples.hal.SensorDeviceType;
 import ca.mcgill.emf.examples.hal.SensorReading;
+import ca.mcgill.emf.examples.hal.SmartHome;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -124,6 +125,13 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	private EClass preconditionCompositeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass smartHomeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -684,6 +692,33 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSmartHome() {
+		return smartHomeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSmartHome_Room() {
+		return (EReference)smartHomeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSmartHome_HomeName() {
+		return (EAttribute)smartHomeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getLogic() {
 		return logicEEnum;
 	}
@@ -782,6 +817,10 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		preconditionCompositeEClass = createEClass(PRECONDITION_COMPOSITE);
 		createEReference(preconditionCompositeEClass, PRECONDITION_COMPOSITE__PRECONDITION);
+
+		smartHomeEClass = createEClass(SMART_HOME);
+		createEReference(smartHomeEClass, SMART_HOME__ROOM);
+		createEAttribute(smartHomeEClass, SMART_HOME__HOME_NAME);
 
 		// Create enums
 		logicEEnum = createEEnum(LOGIC);
@@ -885,6 +924,10 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		initEClass(preconditionCompositeEClass, PreconditionComposite.class, "PreconditionComposite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPreconditionComposite_Precondition(), this.getPrecondition(), null, "precondition", null, 0, -1, PreconditionComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(smartHomeEClass, SmartHome.class, "SmartHome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSmartHome_Room(), this.getRoom(), null, "room", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSmartHome_HomeName(), ecorePackage.getEString(), "homeName", null, 0, 1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(logicEEnum, Logic.class, "Logic");
