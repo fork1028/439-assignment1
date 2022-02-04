@@ -112,6 +112,14 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 				return createActuatorDeviceTypeAdapter();
 			}
 			@Override
+			public Adapter caseLogicBool(LogicBool object) {
+				return createLogicBoolAdapter();
+			}
+			@Override
+			public Adapter casePreconditionComposite(PreconditionComposite object) {
+				return createPreconditionCompositeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -282,6 +290,34 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActuatorDeviceTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.LogicBool <em>Logic Bool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.LogicBool
+	 * @generated
+	 */
+	public Adapter createLogicBoolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.PreconditionComposite <em>Precondition Composite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.PreconditionComposite
+	 * @generated
+	 */
+	public Adapter createPreconditionCompositeAdapter() {
 		return null;
 	}
 

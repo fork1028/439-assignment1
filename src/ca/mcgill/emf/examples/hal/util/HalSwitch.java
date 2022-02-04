@@ -132,6 +132,20 @@ public class HalSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HalPackage.LOGIC_BOOL: {
+				LogicBool logicBool = (LogicBool)theEObject;
+				T result = caseLogicBool(logicBool);
+				if (result == null) result = casePrecondition(logicBool);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HalPackage.PRECONDITION_COMPOSITE: {
+				PreconditionComposite preconditionComposite = (PreconditionComposite)theEObject;
+				T result = casePreconditionComposite(preconditionComposite);
+				if (result == null) result = casePrecondition(preconditionComposite);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -298,6 +312,36 @@ public class HalSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActuatorDeviceType(ActuatorDeviceType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logic Bool</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logic Bool</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogicBool(LogicBool object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Precondition Composite</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Precondition Composite</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePreconditionComposite(PreconditionComposite object) {
 		return null;
 	}
 

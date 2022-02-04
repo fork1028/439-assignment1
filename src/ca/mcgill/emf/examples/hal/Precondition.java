@@ -2,8 +2,6 @@
  */
 package ca.mcgill.emf.examples.hal;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -95,17 +93,27 @@ public interface Precondition extends EObject {
 	void setAutomationrule(AutomationRule value);
 
 	/**
-	 * Returns the value of the '<em><b>Sensordevice</b></em>' reference list.
-	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.SensorDevice}.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition <em>Precondition</em>}'.
+	 * Returns the value of the '<em><b>Sensordevice</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDeviceType#getPrecondition <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sensordevice</em>' reference list.
+	 * @return the value of the '<em>Sensordevice</em>' reference.
+	 * @see #setSensordevice(SensorDeviceType)
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getPrecondition_Sensordevice()
-	 * @see ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition
+	 * @see ca.mcgill.emf.examples.hal.SensorDeviceType#getPrecondition
 	 * @model opposite="precondition"
 	 * @generated
 	 */
-	EList<SensorDevice> getSensordevice();
+	SensorDeviceType getSensordevice();
+
+	/**
+	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.Precondition#getSensordevice <em>Sensordevice</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sensordevice</em>' reference.
+	 * @see #getSensordevice()
+	 * @generated
+	 */
+	void setSensordevice(SensorDeviceType value);
 
 } // Precondition

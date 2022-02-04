@@ -10,7 +10,10 @@ import ca.mcgill.emf.examples.hal.AutomationRule;
 import ca.mcgill.emf.examples.hal.ControlCommand;
 import ca.mcgill.emf.examples.hal.HalFactory;
 import ca.mcgill.emf.examples.hal.HalPackage;
+import ca.mcgill.emf.examples.hal.Logic;
+import ca.mcgill.emf.examples.hal.LogicBool;
 import ca.mcgill.emf.examples.hal.Precondition;
+import ca.mcgill.emf.examples.hal.PreconditionComposite;
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.SensorDevice;
 import ca.mcgill.emf.examples.hal.SensorDeviceType;
@@ -18,6 +21,7 @@ import ca.mcgill.emf.examples.hal.SensorReading;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -106,6 +110,27 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	private EClass actuatorDeviceTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicBoolEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass preconditionCompositeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum logicEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -443,35 +468,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSensorDevice_Precondition() {
-		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSensorDevice_Room() {
-		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSensorDevice_Sensorreading() {
-		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSensorDevice_Sensordevicetype() {
-		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(4);
+		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -542,26 +540,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActuatorDevice_Room() {
-		return (EReference)actuatorDeviceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActuatorDevice_Controlcommand() {
-		return (EReference)actuatorDeviceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getActuatorDevice_Actuatordevicetype() {
-		return (EReference)actuatorDeviceEClass.getEStructuralFeatures().get(3);
+		return (EReference)actuatorDeviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -596,6 +576,33 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSensorDeviceType_Precondition() {
+		return (EReference)sensorDeviceTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSensorDeviceType_Sensorreading() {
+		return (EReference)sensorDeviceTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSensorDeviceType_Room() {
+		return (EReference)sensorDeviceTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getActuatorDeviceType() {
 		return actuatorDeviceTypeEClass;
 	}
@@ -616,6 +623,69 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 */
 	public EReference getActuatorDeviceType_Actuatordevice() {
 		return (EReference)actuatorDeviceTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActuatorDeviceType_Room() {
+		return (EReference)actuatorDeviceTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActuatorDeviceType_Controlcommand() {
+		return (EReference)actuatorDeviceTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogicBool() {
+		return logicBoolEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogicBool_Bool() {
+		return (EAttribute)logicBoolEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPreconditionComposite() {
+		return preconditionCompositeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPreconditionComposite_Precondition() {
+		return (EReference)preconditionCompositeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getLogic() {
+		return logicEEnum;
 	}
 
 	/**
@@ -682,9 +752,6 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		sensorDeviceEClass = createEClass(SENSOR_DEVICE);
 		createEAttribute(sensorDeviceEClass, SENSOR_DEVICE__DEVICE_NAME);
-		createEReference(sensorDeviceEClass, SENSOR_DEVICE__PRECONDITION);
-		createEReference(sensorDeviceEClass, SENSOR_DEVICE__ROOM);
-		createEReference(sensorDeviceEClass, SENSOR_DEVICE__SENSORREADING);
 		createEReference(sensorDeviceEClass, SENSOR_DEVICE__SENSORDEVICETYPE);
 
 		roomEClass = createEClass(ROOM);
@@ -695,17 +762,29 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		actuatorDeviceEClass = createEClass(ACTUATOR_DEVICE);
 		createEAttribute(actuatorDeviceEClass, ACTUATOR_DEVICE__DEVICE_NAME);
-		createEReference(actuatorDeviceEClass, ACTUATOR_DEVICE__ROOM);
-		createEReference(actuatorDeviceEClass, ACTUATOR_DEVICE__CONTROLCOMMAND);
 		createEReference(actuatorDeviceEClass, ACTUATOR_DEVICE__ACTUATORDEVICETYPE);
 
 		sensorDeviceTypeEClass = createEClass(SENSOR_DEVICE_TYPE);
 		createEAttribute(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__SENSOR_TYPE_NAME);
 		createEReference(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__SENSORDEVICE);
+		createEReference(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__PRECONDITION);
+		createEReference(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__SENSORREADING);
+		createEReference(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__ROOM);
 
 		actuatorDeviceTypeEClass = createEClass(ACTUATOR_DEVICE_TYPE);
 		createEAttribute(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME);
 		createEReference(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE);
+		createEReference(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__ROOM);
+		createEReference(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND);
+
+		logicBoolEClass = createEClass(LOGIC_BOOL);
+		createEAttribute(logicBoolEClass, LOGIC_BOOL__BOOL);
+
+		preconditionCompositeEClass = createEClass(PRECONDITION_COMPOSITE);
+		createEReference(preconditionCompositeEClass, PRECONDITION_COMPOSITE__PRECONDITION);
+
+		// Create enums
+		logicEEnum = createEEnum(LOGIC);
 	}
 
 	/**
@@ -736,6 +815,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		logicBoolEClass.getESuperTypes().add(this.getPrecondition());
+		preconditionCompositeEClass.getESuperTypes().add(this.getPrecondition());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(automationRuleEClass, AutomationRule.class, "AutomationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -747,7 +828,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEAttribute(getPrecondition_PreconditionId(), ecorePackage.getEString(), "preconditionId", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPrecondition_ConstraintValue(), ecorePackage.getEString(), "constraintValue", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPrecondition_Automationrule(), this.getAutomationRule(), this.getAutomationRule_Precondition(), "automationrule", null, 1, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrecondition_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Precondition(), "sensordevice", null, 0, -1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrecondition_Sensordevice(), this.getSensorDeviceType(), this.getSensorDeviceType_Precondition(), "sensordevice", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_ActionId(), ecorePackage.getEString(), "actionId", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -763,41 +844,53 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEAttribute(getSensorReading_ReadingValue(), ecorePackage.getEString(), "readingValue", null, 0, 1, SensorReading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensorReading_SensorTimestamp(), ecorePackage.getEString(), "sensorTimestamp", null, 0, 1, SensorReading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensorReading_Activitylog(), this.getActivityLog(), this.getActivityLog_Sensorreading(), "activitylog", null, 1, 1, SensorReading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorReading_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Sensorreading(), "sensordevice", null, 1, 1, SensorReading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorReading_Sensordevice(), this.getSensorDeviceType(), this.getSensorDeviceType_Sensorreading(), "sensordevice", null, 1, 1, SensorReading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlCommandEClass, ControlCommand.class, "ControlCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControlCommand_CommandId(), ecorePackage.getEString(), "commandId", null, 0, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControlCommand_ControlTimestamp(), ecorePackage.getEString(), "controlTimestamp", null, 0, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlCommand_Actuatordevice(), this.getActuatorDevice(), this.getActuatorDevice_Controlcommand(), "actuatordevice", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlCommand_Actuatordevice(), this.getActuatorDeviceType(), this.getActuatorDeviceType_Controlcommand(), "actuatordevice", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlCommand_Activitylog(), this.getActivityLog(), this.getActivityLog_Controlcommand(), "activitylog", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlCommand_Action(), this.getAction(), this.getAction_Controlcommand(), "action", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorDeviceEClass, SensorDevice.class, "SensorDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensorDevice_DeviceName(), ecorePackage.getEString(), "deviceName", null, 0, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorDevice_Precondition(), this.getPrecondition(), this.getPrecondition_Sensordevice(), "precondition", null, 1, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorDevice_Room(), this.getRoom(), this.getRoom_Sensordevice(), "room", null, 1, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorDevice_Sensorreading(), this.getSensorReading(), this.getSensorReading_Sensordevice(), "sensorreading", null, 0, -1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorDevice_Sensordevicetype(), this.getSensorDeviceType(), this.getSensorDeviceType_Sensordevice(), "sensordevicetype", null, 0, -1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorDevice_Sensordevicetype(), this.getSensorDeviceType(), this.getSensorDeviceType_Sensordevice(), "sensordevicetype", null, 1, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_RoomId(), ecorePackage.getEString(), "roomId", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_RoomName(), ecorePackage.getEString(), "roomName", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoom_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Room(), "sensordevice", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoom_Actuatordevice(), this.getActuatorDevice(), this.getActuatorDevice_Room(), "actuatordevice", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Sensordevice(), this.getSensorDeviceType(), this.getSensorDeviceType_Room(), "sensordevice", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Actuatordevice(), this.getActuatorDeviceType(), this.getActuatorDeviceType_Room(), "actuatordevice", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorDeviceEClass, ActuatorDevice.class, "ActuatorDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActuatorDevice_DeviceName(), ecorePackage.getEString(), "deviceName", null, 0, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActuatorDevice_Room(), this.getRoom(), this.getRoom_Actuatordevice(), "room", null, 1, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActuatorDevice_Controlcommand(), this.getControlCommand(), this.getControlCommand_Actuatordevice(), "controlcommand", null, 0, -1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActuatorDevice_Actuatordevicetype(), this.getActuatorDeviceType(), this.getActuatorDeviceType_Actuatordevice(), "actuatordevicetype", null, 0, -1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActuatorDevice_Actuatordevicetype(), this.getActuatorDeviceType(), this.getActuatorDeviceType_Actuatordevice(), "actuatordevicetype", null, 1, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorDeviceTypeEClass, SensorDeviceType.class, "SensorDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensorDeviceType_SensorTypeName(), ecorePackage.getEString(), "sensorTypeName", null, 0, 1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorDeviceType_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Sensordevicetype(), "sensordevice", null, 1, 1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorDeviceType_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Sensordevicetype(), "sensordevice", null, 0, -1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorDeviceType_Precondition(), this.getPrecondition(), this.getPrecondition_Sensordevice(), "precondition", null, 0, 1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorDeviceType_Sensorreading(), this.getSensorReading(), this.getSensorReading_Sensordevice(), "sensorreading", null, 0, 1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorDeviceType_Room(), this.getRoom(), this.getRoom_Sensordevice(), "room", null, 0, 1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorDeviceTypeEClass, ActuatorDeviceType.class, "ActuatorDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActuatorDeviceType_ActuatorTypeName(), ecorePackage.getEString(), "actuatorTypeName", null, 0, 1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActuatorDeviceType_Actuatordevice(), this.getActuatorDevice(), this.getActuatorDevice_Actuatordevicetype(), "actuatordevice", null, 1, 1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActuatorDeviceType_Actuatordevice(), this.getActuatorDevice(), this.getActuatorDevice_Actuatordevicetype(), "actuatordevice", null, 0, -1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActuatorDeviceType_Room(), this.getRoom(), this.getRoom_Actuatordevice(), "room", null, 0, 1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActuatorDeviceType_Controlcommand(), this.getControlCommand(), this.getControlCommand_Actuatordevice(), "controlcommand", null, 0, 1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(logicBoolEClass, LogicBool.class, "LogicBool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogicBool_Bool(), this.getLogic(), "bool", null, 0, 1, LogicBool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(preconditionCompositeEClass, PreconditionComposite.class, "PreconditionComposite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPreconditionComposite_Precondition(), this.getPrecondition(), null, "precondition", null, 0, -1, PreconditionComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(logicEEnum, Logic.class, "Logic");
+		addEEnumLiteral(logicEEnum, Logic.AND);
+		addEEnumLiteral(logicEEnum, Logic.OR);
+		addEEnumLiteral(logicEEnum, Logic.NOT);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,8 +2,6 @@
  */
 package ca.mcgill.emf.examples.hal;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,9 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getDeviceName <em>Device Name</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensorreading <em>Sensorreading</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensordevicetype <em>Sensordevicetype</em>}</li>
  * </ul>
  *
@@ -50,79 +45,27 @@ public interface SensorDevice extends EObject {
 	void setDeviceName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Precondition</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.Precondition#getSensordevice <em>Sensordevice</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Precondition</em>' reference.
-	 * @see #setPrecondition(Precondition)
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice_Precondition()
-	 * @see ca.mcgill.emf.examples.hal.Precondition#getSensordevice
-	 * @model opposite="sensordevice" required="true"
-	 * @generated
-	 */
-	Precondition getPrecondition();
-
-	/**
-	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition <em>Precondition</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Precondition</em>' reference.
-	 * @see #getPrecondition()
-	 * @generated
-	 */
-	void setPrecondition(Precondition value);
-
-	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.Room#getSensordevice <em>Sensordevice</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference.
-	 * @see #setRoom(Room)
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice_Room()
-	 * @see ca.mcgill.emf.examples.hal.Room#getSensordevice
-	 * @model opposite="sensordevice" required="true"
-	 * @generated
-	 */
-	Room getRoom();
-
-	/**
-	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room</em>' reference.
-	 * @see #getRoom()
-	 * @generated
-	 */
-	void setRoom(Room value);
-
-	/**
-	 * Returns the value of the '<em><b>Sensorreading</b></em>' reference list.
-	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.SensorReading}.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorReading#getSensordevice <em>Sensordevice</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sensorreading</em>' reference list.
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice_Sensorreading()
-	 * @see ca.mcgill.emf.examples.hal.SensorReading#getSensordevice
-	 * @model opposite="sensordevice"
-	 * @generated
-	 */
-	EList<SensorReading> getSensorreading();
-
-	/**
-	 * Returns the value of the '<em><b>Sensordevicetype</b></em>' reference list.
-	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.SensorDeviceType}.
+	 * Returns the value of the '<em><b>Sensordevicetype</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDeviceType#getSensordevice <em>Sensordevice</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sensordevicetype</em>' reference list.
+	 * @return the value of the '<em>Sensordevicetype</em>' reference.
+	 * @see #setSensordevicetype(SensorDeviceType)
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice_Sensordevicetype()
 	 * @see ca.mcgill.emf.examples.hal.SensorDeviceType#getSensordevice
-	 * @model opposite="sensordevice"
+	 * @model opposite="sensordevice" required="true"
 	 * @generated
 	 */
-	EList<SensorDeviceType> getSensordevicetype();
+	SensorDeviceType getSensordevicetype();
+
+	/**
+	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensordevicetype <em>Sensordevicetype</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sensordevicetype</em>' reference.
+	 * @see #getSensordevicetype()
+	 * @generated
+	 */
+	void setSensordevicetype(SensorDeviceType value);
 
 } // SensorDevice

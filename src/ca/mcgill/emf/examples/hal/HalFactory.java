@@ -121,6 +121,24 @@ public interface HalFactory extends EFactory {
 	ActuatorDeviceType createActuatorDeviceType();
 
 	/**
+	 * Returns a new object of class '<em>Logic Bool</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logic Bool</em>'.
+	 * @generated
+	 */
+	LogicBool createLogicBool();
+
+	/**
+	 * Returns a new object of class '<em>Precondition Composite</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Precondition Composite</em>'.
+	 * @generated
+	 */
+	PreconditionComposite createPreconditionComposite();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

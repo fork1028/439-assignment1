@@ -72,30 +72,30 @@ public interface Room extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Sensordevice</b></em>' reference list.
-	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.SensorDevice}.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}'.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.SensorDeviceType}.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDeviceType#getRoom <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sensordevice</em>' reference list.
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getRoom_Sensordevice()
-	 * @see ca.mcgill.emf.examples.hal.SensorDevice#getRoom
+	 * @see ca.mcgill.emf.examples.hal.SensorDeviceType#getRoom
 	 * @model opposite="room"
 	 * @generated
 	 */
-	EList<SensorDevice> getSensordevice();
+	EList<SensorDeviceType> getSensordevice();
 
 	/**
 	 * Returns the value of the '<em><b>Actuatordevice</b></em>' reference list.
-	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.ActuatorDevice}.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getRoom <em>Room</em>}'.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.ActuatorDeviceType}.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ActuatorDeviceType#getRoom <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actuatordevice</em>' reference list.
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getRoom_Actuatordevice()
-	 * @see ca.mcgill.emf.examples.hal.ActuatorDevice#getRoom
+	 * @see ca.mcgill.emf.examples.hal.ActuatorDeviceType#getRoom
 	 * @model opposite="room"
 	 * @generated
 	 */
-	EList<ActuatorDevice> getActuatordevice();
+	EList<ActuatorDeviceType> getActuatordevice();
 
 } // Room

@@ -5,6 +5,7 @@ package ca.mcgill.emf.examples.hal.impl;
 import ca.mcgill.emf.examples.hal.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -67,8 +68,40 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 			case HalPackage.ACTUATOR_DEVICE: return createActuatorDevice();
 			case HalPackage.SENSOR_DEVICE_TYPE: return createSensorDeviceType();
 			case HalPackage.ACTUATOR_DEVICE_TYPE: return createActuatorDeviceType();
+			case HalPackage.LOGIC_BOOL: return createLogicBool();
+			case HalPackage.PRECONDITION_COMPOSITE: return createPreconditionComposite();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case HalPackage.LOGIC:
+				return createLogicFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case HalPackage.LOGIC:
+				return convertLogicToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -180,6 +213,46 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	public ActuatorDeviceType createActuatorDeviceType() {
 		ActuatorDeviceTypeImpl actuatorDeviceType = new ActuatorDeviceTypeImpl();
 		return actuatorDeviceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicBool createLogicBool() {
+		LogicBoolImpl logicBool = new LogicBoolImpl();
+		return logicBool;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PreconditionComposite createPreconditionComposite() {
+		PreconditionCompositeImpl preconditionComposite = new PreconditionCompositeImpl();
+		return preconditionComposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Logic createLogicFromString(EDataType eDataType, String initialValue) {
+		Logic result = Logic.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLogicToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

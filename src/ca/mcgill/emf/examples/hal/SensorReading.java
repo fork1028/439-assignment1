@@ -94,17 +94,17 @@ public interface SensorReading extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Sensordevice</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensorreading <em>Sensorreading</em>}'.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDeviceType#getSensorreading <em>Sensorreading</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sensordevice</em>' reference.
-	 * @see #setSensordevice(SensorDevice)
+	 * @see #setSensordevice(SensorDeviceType)
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorReading_Sensordevice()
-	 * @see ca.mcgill.emf.examples.hal.SensorDevice#getSensorreading
+	 * @see ca.mcgill.emf.examples.hal.SensorDeviceType#getSensorreading
 	 * @model opposite="sensorreading" required="true"
 	 * @generated
 	 */
-	SensorDevice getSensordevice();
+	SensorDeviceType getSensordevice();
 
 	/**
 	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.SensorReading#getSensordevice <em>Sensordevice</em>}' reference.
@@ -114,6 +114,6 @@ public interface SensorReading extends EObject {
 	 * @see #getSensordevice()
 	 * @generated
 	 */
-	void setSensordevice(SensorDevice value);
+	void setSensordevice(SensorDeviceType value);
 
 } // SensorReading
