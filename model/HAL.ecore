@@ -13,8 +13,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="automationrule" lowerBound="1"
         eType="#//AutomationRule" eOpposite="#//AutomationRule/precondition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevice" upperBound="-1"
-        eType="#//SensorDevice" eOpposite="#//SensorDevice/precondition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevice" eType="#//SensorDeviceType"
+        eOpposite="#//SensorDeviceType/precondition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -36,13 +36,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="activitylog" lowerBound="1"
         eType="#//ActivityLog" eOpposite="#//ActivityLog/sensorreading"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevice" lowerBound="1"
-        eType="#//SensorDevice" eOpposite="#//SensorDevice/sensorreading"/>
+        eType="#//SensorDeviceType" eOpposite="#//SensorDeviceType/sensorreading"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlCommand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlTimestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuatordevice" lowerBound="1"
-        eType="#//ActuatorDevice" eOpposite="#//ActuatorDevice/controlcommand"/>
+        eType="#//ActuatorDeviceType" eOpposite="#//ActuatorDeviceType/controlcommand"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activitylog" lowerBound="1"
         eType="#//ActivityLog" eOpposite="#//ActivityLog/controlcommand"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
@@ -50,40 +50,50 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SensorDevice">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" lowerBound="1"
-        eType="#//Precondition" eOpposite="#//Precondition/sensordevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" lowerBound="1" eType="#//Room"
-        eOpposite="#//Room/sensordevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sensorreading" upperBound="-1"
-        eType="#//SensorReading" eOpposite="#//SensorReading/sensordevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevicetype" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevicetype" lowerBound="1"
         eType="#//SensorDeviceType" eOpposite="#//SensorDeviceType/sensordevice"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevice" upperBound="-1"
-        eType="#//SensorDevice" eOpposite="#//SensorDevice/room"/>
+        eType="#//SensorDeviceType" eOpposite="#//SensorDeviceType/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuatordevice" upperBound="-1"
-        eType="#//ActuatorDevice" eOpposite="#//ActuatorDevice/room"/>
+        eType="#//ActuatorDeviceType" eOpposite="#//ActuatorDeviceType/room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActuatorDevice">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" lowerBound="1" eType="#//Room"
-        eOpposite="#//Room/actuatordevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controlcommand" upperBound="-1"
-        eType="#//ControlCommand" eOpposite="#//ControlCommand/actuatordevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actuatordevicetype" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuatordevicetype" lowerBound="1"
         eType="#//ActuatorDeviceType" eOpposite="#//ActuatorDeviceType/actuatordevice"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SensorDeviceType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensorTypeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevice" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevice" upperBound="-1"
         eType="#//SensorDevice" eOpposite="#//SensorDevice/sensordevicetype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//Precondition"
+        eOpposite="#//Precondition/sensordevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensorreading" eType="#//SensorReading"
+        eOpposite="#//SensorReading/sensordevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//Room" eOpposite="#//Room/sensordevice"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActuatorDeviceType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actuatorTypeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actuatordevice" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuatordevice" upperBound="-1"
         eType="#//ActuatorDevice" eOpposite="#//ActuatorDevice/actuatordevicetype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//Room" eOpposite="#//Room/actuatordevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlcommand" eType="#//ControlCommand"
+        eOpposite="#//ControlCommand/actuatordevice"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicBool" eSuperTypes="#//Precondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bool" eType="#//Logic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreconditionComposite" eSuperTypes="#//Precondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" upperBound="-1"
+        eType="#//Precondition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Logic">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="NOT" value="2"/>
   </eClassifiers>
 </ecore:EPackage>
