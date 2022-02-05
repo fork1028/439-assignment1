@@ -2,10 +2,10 @@
  */
 package ca.mcgill.emf.examples.hal.impl;
 
-import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
+import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.Room;
-import ca.mcgill.emf.examples.hal.SensorDeviceType;
+import ca.mcgill.emf.examples.hal.SensorDevice;
 
 import java.util.Collection;
 
@@ -88,7 +88,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SensorDeviceType> sensordevice;
+	protected EList<SensorDevice> sensordevice;
 
 	/**
 	 * The cached value of the '{@link #getActuatordevice() <em>Actuatordevice</em>}' reference list.
@@ -98,7 +98,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ActuatorDeviceType> actuatordevice;
+	protected EList<ActuatorDevice> actuatordevice;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,9 +166,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SensorDeviceType> getSensordevice() {
+	public EList<SensorDevice> getSensordevice() {
 		if (sensordevice == null) {
-			sensordevice = new EObjectWithInverseResolvingEList<SensorDeviceType>(SensorDeviceType.class, this, HalPackage.ROOM__SENSORDEVICE, HalPackage.SENSOR_DEVICE_TYPE__ROOM);
+			sensordevice = new EObjectWithInverseResolvingEList<SensorDevice>(SensorDevice.class, this, HalPackage.ROOM__SENSORDEVICE, HalPackage.SENSOR_DEVICE__ROOM);
 		}
 		return sensordevice;
 	}
@@ -178,9 +178,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ActuatorDeviceType> getActuatordevice() {
+	public EList<ActuatorDevice> getActuatordevice() {
 		if (actuatordevice == null) {
-			actuatordevice = new EObjectWithInverseResolvingEList<ActuatorDeviceType>(ActuatorDeviceType.class, this, HalPackage.ROOM__ACTUATORDEVICE, HalPackage.ACTUATOR_DEVICE_TYPE__ROOM);
+			actuatordevice = new EObjectWithInverseResolvingEList<ActuatorDevice>(ActuatorDevice.class, this, HalPackage.ROOM__ACTUATORDEVICE, HalPackage.ACTUATOR_DEVICE__ROOM);
 		}
 		return actuatordevice;
 	}
@@ -255,11 +255,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case HalPackage.ROOM__SENSORDEVICE:
 				getSensordevice().clear();
-				getSensordevice().addAll((Collection<? extends SensorDeviceType>)newValue);
+				getSensordevice().addAll((Collection<? extends SensorDevice>)newValue);
 				return;
 			case HalPackage.ROOM__ACTUATORDEVICE:
 				getActuatordevice().clear();
-				getActuatordevice().addAll((Collection<? extends ActuatorDeviceType>)newValue);
+				getActuatordevice().addAll((Collection<? extends ActuatorDevice>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -51,5 +51,40 @@ public class HALController {
 		}
 		return null;
 	}
+	
+	// sensor
+	
+	public static String addSensor(String roomName, SensorDeviceType sensorDeviceType) {
+		if (!isRoomExisted(roomName)) {
+			return "Room with name " + roomName + " does not exist";
+		}
+		if (isTypeValid(sensorDeviceType)) {
+			return "Sensor device type must be specified";
+		}
+		if (existsSensorDeviceType(sensorDeviceType)) {
+			return "Sensor device with type " + sensorDeviceType + " already exists";
+		}
+		SmartHome smartHome = HALApplication.getSmartHome();
+        SensorDevice sd = HalFactory.eINSTANCE.createSensorDevice();
+        sd.setSensordevicetype(sensorDeviceType);
+        Room r = findRoom(roomName);
+        r.getSensordevice().add(sd);
+		tournament.getTeams().add(t);
+		TournamentApplication.save();
+		return null;
+	}
+
+	public static String removeSensor(String teamName) {
+        Team t = findTeam(teamName);
+        // if t is not found, no error message is returned because the end result is the same:
+     	// the team with teamName does not exist
+     	if (t != null) {
+            t.setGroup(null);
+    		Tournament tournament = TournamentApplication.getTournmament();
+    		tournament.getTeams().remove(t);
+    		TournamentApplication.save();
+        }
+		return null;
+	}
 
 }

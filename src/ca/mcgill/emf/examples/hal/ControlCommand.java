@@ -71,17 +71,17 @@ public interface ControlCommand extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Actuatordevice</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ActuatorDeviceType#getControlcommand <em>Controlcommand</em>}'.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getControlcommand <em>Controlcommand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actuatordevice</em>' reference.
-	 * @see #setActuatordevice(ActuatorDeviceType)
+	 * @see #setActuatordevice(ActuatorDevice)
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getControlCommand_Actuatordevice()
-	 * @see ca.mcgill.emf.examples.hal.ActuatorDeviceType#getControlcommand
+	 * @see ca.mcgill.emf.examples.hal.ActuatorDevice#getControlcommand
 	 * @model opposite="controlcommand" required="true"
 	 * @generated
 	 */
-	ActuatorDeviceType getActuatordevice();
+	ActuatorDevice getActuatordevice();
 
 	/**
 	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevice <em>Actuatordevice</em>}' reference.
@@ -91,7 +91,7 @@ public interface ControlCommand extends EObject {
 	 * @see #getActuatordevice()
 	 * @generated
 	 */
-	void setActuatordevice(ActuatorDeviceType value);
+	void setActuatordevice(ActuatorDevice value);
 
 	/**
 	 * Returns the value of the '<em><b>Activitylog</b></em>' reference.

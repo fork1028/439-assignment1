@@ -5,7 +5,7 @@ package ca.mcgill.emf.examples.hal.impl;
 import ca.mcgill.emf.examples.hal.AutomationRule;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.Precondition;
-import ca.mcgill.emf.examples.hal.SensorDeviceType;
+import ca.mcgill.emf.examples.hal.SensorDevice;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -91,7 +91,7 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @generated
 	 * @ordered
 	 */
-	protected SensorDeviceType sensordevice;
+	protected SensorDevice sensordevice;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,10 +219,10 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensorDeviceType getSensordevice() {
+	public SensorDevice getSensordevice() {
 		if (sensordevice != null && sensordevice.eIsProxy()) {
 			InternalEObject oldSensordevice = (InternalEObject)sensordevice;
-			sensordevice = (SensorDeviceType)eResolveProxy(oldSensordevice);
+			sensordevice = (SensorDevice)eResolveProxy(oldSensordevice);
 			if (sensordevice != oldSensordevice) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.PRECONDITION__SENSORDEVICE, oldSensordevice, sensordevice));
@@ -236,7 +236,7 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensorDeviceType basicGetSensordevice() {
+	public SensorDevice basicGetSensordevice() {
 		return sensordevice;
 	}
 
@@ -245,8 +245,8 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSensordevice(SensorDeviceType newSensordevice, NotificationChain msgs) {
-		SensorDeviceType oldSensordevice = sensordevice;
+	public NotificationChain basicSetSensordevice(SensorDevice newSensordevice, NotificationChain msgs) {
+		SensorDevice oldSensordevice = sensordevice;
 		sensordevice = newSensordevice;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.PRECONDITION__SENSORDEVICE, oldSensordevice, newSensordevice);
@@ -260,13 +260,13 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSensordevice(SensorDeviceType newSensordevice) {
+	public void setSensordevice(SensorDevice newSensordevice) {
 		if (newSensordevice != sensordevice) {
 			NotificationChain msgs = null;
 			if (sensordevice != null)
-				msgs = ((InternalEObject)sensordevice).eInverseRemove(this, HalPackage.SENSOR_DEVICE_TYPE__PRECONDITION, SensorDeviceType.class, msgs);
+				msgs = ((InternalEObject)sensordevice).eInverseRemove(this, HalPackage.SENSOR_DEVICE__PRECONDITION, SensorDevice.class, msgs);
 			if (newSensordevice != null)
-				msgs = ((InternalEObject)newSensordevice).eInverseAdd(this, HalPackage.SENSOR_DEVICE_TYPE__PRECONDITION, SensorDeviceType.class, msgs);
+				msgs = ((InternalEObject)newSensordevice).eInverseAdd(this, HalPackage.SENSOR_DEVICE__PRECONDITION, SensorDevice.class, msgs);
 			msgs = basicSetSensordevice(newSensordevice, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -288,8 +288,8 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 				return basicSetAutomationrule((AutomationRule)otherEnd, msgs);
 			case HalPackage.PRECONDITION__SENSORDEVICE:
 				if (sensordevice != null)
-					msgs = ((InternalEObject)sensordevice).eInverseRemove(this, HalPackage.SENSOR_DEVICE_TYPE__PRECONDITION, SensorDeviceType.class, msgs);
-				return basicSetSensordevice((SensorDeviceType)otherEnd, msgs);
+					msgs = ((InternalEObject)sensordevice).eInverseRemove(this, HalPackage.SENSOR_DEVICE__PRECONDITION, SensorDevice.class, msgs);
+				return basicSetSensordevice((SensorDevice)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -350,7 +350,7 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 				setAutomationrule((AutomationRule)newValue);
 				return;
 			case HalPackage.PRECONDITION__SENSORDEVICE:
-				setSensordevice((SensorDeviceType)newValue);
+				setSensordevice((SensorDevice)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -374,7 +374,7 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 				setAutomationrule((AutomationRule)null);
 				return;
 			case HalPackage.PRECONDITION__SENSORDEVICE:
-				setSensordevice((SensorDeviceType)null);
+				setSensordevice((SensorDevice)null);
 				return;
 		}
 		super.eUnset(featureID);

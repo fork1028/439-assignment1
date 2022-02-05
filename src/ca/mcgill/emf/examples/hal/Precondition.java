@@ -94,17 +94,17 @@ public interface Precondition extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Sensordevice</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDeviceType#getPrecondition <em>Precondition</em>}'.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sensordevice</em>' reference.
-	 * @see #setSensordevice(SensorDeviceType)
+	 * @see #setSensordevice(SensorDevice)
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getPrecondition_Sensordevice()
-	 * @see ca.mcgill.emf.examples.hal.SensorDeviceType#getPrecondition
+	 * @see ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition
 	 * @model opposite="precondition"
 	 * @generated
 	 */
-	SensorDeviceType getSensordevice();
+	SensorDevice getSensordevice();
 
 	/**
 	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.Precondition#getSensordevice <em>Sensordevice</em>}' reference.
@@ -114,6 +114,6 @@ public interface Precondition extends EObject {
 	 * @see #getSensordevice()
 	 * @generated
 	 */
-	void setSensordevice(SensorDeviceType value);
+	void setSensordevice(SensorDevice value);
 
 } // Precondition

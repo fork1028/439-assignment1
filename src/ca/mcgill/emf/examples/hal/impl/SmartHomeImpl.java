@@ -2,8 +2,10 @@
  */
 package ca.mcgill.emf.examples.hal.impl;
 
+import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.Room;
+import ca.mcgill.emf.examples.hal.SensorDevice;
 import ca.mcgill.emf.examples.hal.SmartHome;
 
 import java.util.Collection;
@@ -32,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.SmartHomeImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.SmartHomeImpl#getHomeName <em>Home Name</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.SmartHomeImpl#getSensordevice <em>Sensordevice</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.SmartHomeImpl#getActuatordevice <em>Actuatordevice</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,6 +60,7 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 	 * @ordered
 	 */
 	protected static final String HOME_NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getHomeName() <em>Home Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,6 +70,26 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 	 * @ordered
 	 */
 	protected String homeName = HOME_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSensordevice() <em>Sensordevice</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSensordevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SensorDevice> sensordevice;
+
+	/**
+	 * The cached value of the '{@link #getActuatordevice() <em>Actuatordevice</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActuatordevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ActuatorDevice> actuatordevice;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,11 +148,39 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SensorDevice> getSensordevice() {
+		if (sensordevice == null) {
+			sensordevice = new EObjectContainmentEList<SensorDevice>(SensorDevice.class, this, HalPackage.SMART_HOME__SENSORDEVICE);
+		}
+		return sensordevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ActuatorDevice> getActuatordevice() {
+		if (actuatordevice == null) {
+			actuatordevice = new EObjectContainmentEList<ActuatorDevice>(ActuatorDevice.class, this, HalPackage.SMART_HOME__ACTUATORDEVICE);
+		}
+		return actuatordevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case HalPackage.SMART_HOME__ROOM:
 				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
+			case HalPackage.SMART_HOME__SENSORDEVICE:
+				return ((InternalEList<?>)getSensordevice()).basicRemove(otherEnd, msgs);
+			case HalPackage.SMART_HOME__ACTUATORDEVICE:
+				return ((InternalEList<?>)getActuatordevice()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -144,6 +197,10 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 				return getRoom();
 			case HalPackage.SMART_HOME__HOME_NAME:
 				return getHomeName();
+			case HalPackage.SMART_HOME__SENSORDEVICE:
+				return getSensordevice();
+			case HalPackage.SMART_HOME__ACTUATORDEVICE:
+				return getActuatordevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,6 +221,14 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 			case HalPackage.SMART_HOME__HOME_NAME:
 				setHomeName((String)newValue);
 				return;
+			case HalPackage.SMART_HOME__SENSORDEVICE:
+				getSensordevice().clear();
+				getSensordevice().addAll((Collection<? extends SensorDevice>)newValue);
+				return;
+			case HalPackage.SMART_HOME__ACTUATORDEVICE:
+				getActuatordevice().clear();
+				getActuatordevice().addAll((Collection<? extends ActuatorDevice>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -182,6 +247,12 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 			case HalPackage.SMART_HOME__HOME_NAME:
 				setHomeName(HOME_NAME_EDEFAULT);
 				return;
+			case HalPackage.SMART_HOME__SENSORDEVICE:
+				getSensordevice().clear();
+				return;
+			case HalPackage.SMART_HOME__ACTUATORDEVICE:
+				getActuatordevice().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,6 +269,10 @@ public class SmartHomeImpl extends MinimalEObjectImpl.Container implements Smart
 				return room != null && !room.isEmpty();
 			case HalPackage.SMART_HOME__HOME_NAME:
 				return HOME_NAME_EDEFAULT == null ? homeName != null : !HOME_NAME_EDEFAULT.equals(homeName);
+			case HalPackage.SMART_HOME__SENSORDEVICE:
+				return sensordevice != null && !sensordevice.isEmpty();
+			case HalPackage.SMART_HOME__ACTUATORDEVICE:
+				return actuatordevice != null && !actuatordevice.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

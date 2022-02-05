@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getRoom <em>Room</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getHomeName <em>Home Name</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getSensordevice <em>Sensordevice</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getActuatordevice <em>Actuatordevice</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getSmartHome()
@@ -57,5 +59,29 @@ public interface SmartHome extends EObject {
 	 * @generated
 	 */
 	void setHomeName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Sensordevice</b></em>' containment reference list.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.SensorDevice}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sensordevice</em>' containment reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSmartHome_Sensordevice()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SensorDevice> getSensordevice();
+
+	/**
+	 * Returns the value of the '<em><b>Actuatordevice</b></em>' containment reference list.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.ActuatorDevice}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actuatordevice</em>' containment reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSmartHome_Actuatordevice()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ActuatorDevice> getActuatordevice();
 
 } // SmartHome
