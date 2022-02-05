@@ -59,30 +59,30 @@ public class HALController {
 		Room r = findRoom(roomName);
 		// if r is not found, no error message is returned because the end result is the same:
 		if (r != null) {
-			SmartHome smarthome = HALApplication.getSmartHome();
+			SmartHome smartHome = HALApplication.getSmartHome();
 			// remove all actuators of the room
-			for (ActuatorDevice ad : smarthome.getActuatordevice()) {
+			for (ActuatorDevice ad : smartHome.getActuatordevice()) {
 				if (ad.getRoom().equals(r)) {
 					ad.setRoom(null);
 					ad.setControlcommand(null);
 					// delete the actuator
 					String actuatorName = ad.getDeviceName();
-					removeActuator(actuatorName);
+					deleteActuator(actuatorName);
 				}
 			}
 			// remove all sensors of the room
-			for (SensorDevice sd : smarthome.getSensordevice()) {
+			for (SensorDevice sd : smartHome.getSensordevice()) {
 				if (sd.getRoom().equals(r)) {
 					sd.setRoom(null);
 					sd.setPrecondition(null);
 					// delete the sensor
 					// delete the actuator
 					String sensorName = sd.getDeviceName();
-					removeActuator(sensorName);
+					deleteActuator(sensorName);
 				}
 			}
 			// remove the room
-			smarthome.getRoom().remove(r);
+			smartHome.getRoom().remove(r);
 			HALApplication.save();
 		}
 		return null;
