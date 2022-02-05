@@ -65,7 +65,9 @@ public class HALController {
 				if (ad.getRoom().equals(r)) {
 					ad.setRoom(null);
 					ad.setControlcommand(null);
-					// delete the actoator
+					// delete the actuator
+					String actuatorName = ad.getDeviceName();
+					removeActuator(actuatorName);
 				}
 			}
 			// remove all sensors of the room
@@ -74,6 +76,9 @@ public class HALController {
 					sd.setRoom(null);
 					sd.setPrecondition(null);
 					// delete the sensor
+					// delete the actuator
+					String sensorName = sd.getDeviceName();
+					removeActuator(sensorName);
 				}
 			}
 			// remove the room
