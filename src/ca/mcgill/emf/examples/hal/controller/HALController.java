@@ -3,20 +3,7 @@ package ca.mcgill.emf.examples.hal.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.mcgill.emf.examples.hal.Action;
-import ca.mcgill.emf.examples.hal.ActivityLog;
-import ca.mcgill.emf.examples.hal.ActuatorDevice;
-import ca.mcgill.emf.examples.hal.AutomationRule;
-import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
-import ca.mcgill.emf.examples.hal.ControlCommand;
-import ca.mcgill.emf.examples.hal.HalFactory;
-import ca.mcgill.emf.examples.hal.HalPackage;
-import ca.mcgill.emf.examples.hal.Precondition;
-import ca.mcgill.emf.examples.hal.Room;
-import ca.mcgill.emf.examples.hal.SensorDevice;
-import ca.mcgill.emf.examples.hal.SensorDeviceType;
-import ca.mcgill.emf.examples.hal.SensorReading;
-import ca.mcgill.emf.examples.hal.SmartHome;
+import ca.mcgill.emf.examples.hal.*;
 import ca.mcgill.emf.examples.hal.application.HALApplication;
 
 public class HALController {
