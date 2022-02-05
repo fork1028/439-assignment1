@@ -15,24 +15,24 @@ public class TORoom {
 	// constructor and getters
 
 	String name;
-	List<SensorDeviceType> sensorDevices;
-	List<ActuatorDeviceType> actuatorDevices;
+	List<String> sensorDeviceNames;
+	List<String> actuatorDeviceNames;
 
-	public TORoom(String name, List<SensorDeviceType> sensorDevices, List<ActuatorDeviceType> actuatorDevices) {
+	public TORoom(String name, List<String> sensorDeviceNames, List<String> actuatorDeviceNames) {
 		this.name = name;
-		this.sensorDevices = sensorDevices;
-		this.actuatorDevices = actuatorDevices;
+		this.sensorDeviceNames = sensorDeviceNames;
+		this.actuatorDeviceNames = actuatorDeviceNames;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public List<SensorDeviceType> getSensorDevices() {
-		return sensorDevices;
+	public List<String> getSensorDeviceNames() {
+		return sensorDeviceNames;
 	}
 
-	public List<ActuatorDeviceType> getActuatorDevices() {
-		return actuatorDevices;
+	public List<String> getActuatorDeviceNames() {
+		return actuatorDeviceNames;
 	}
 }

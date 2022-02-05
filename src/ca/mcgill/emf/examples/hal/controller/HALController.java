@@ -83,6 +83,34 @@ public class HALController {
 		return null;
 	}
 	
+	// query methods
+	
+	public static TORoom getRoom(String roomName) {
+		TORoom result = null;
+		Room r = findRoom(roomName);
+		if (r != null) {
+			List<String> sensorDeviceNames = new ArrayList<String>();
+			List<String> actuatorDeviceNames = new ArrayList<String>();
+			for (SensorDevice sd : r.getSensordevice()) {
+				sensorDeviceNames.add(sd.getDeviceName());
+			}
+			for (ActuatorDevice ad : r.getActuatordevice()) {
+				actuatorDeviceNames.add(ad.getDeviceName());
+			}
+			result = new TORoom(r.getRoomName(), sensorDeviceNames, actuatorDeviceNames);
+		}
+		return result;
+	}
+
+	public static List<String> getRooms() {
+		ArrayList<String> roomNames = new ArrayList<String>();
+		SmartHome smartHome = HALApplication.getSmartHome();
+		for (Room r : smartHome.getRoom()) {
+			roomNames.add(r.getRoomName());
+		}
+		return roomNames;
+	}
+	
 	// sensor
 
 	/**
@@ -114,7 +142,7 @@ public class HALController {
 	 * @param sensorDeviceName
 	 * @return
 	 */
-	public static String removeSensor(String sensorDeviceName) {
+	public static String deleteSensor(String sensorDeviceName) {
 		SensorDevice sd = findSensorDevice(sensorDeviceName);
 		if (sd != null) {
 			sd.setRoom(null);
@@ -156,7 +184,7 @@ public class HALController {
 	 * @param actuatorDeviceName
 	 * @return
 	 */
-	public static String removeActuator(String actuatorDeviceName) {
+	public static String deleteActuator(String actuatorDeviceName) {
 		ActuatorDevice ad = findActuatorDevice(actuatorDeviceName);
 		if (ad != null) {
 			ad.setRoom(null);
