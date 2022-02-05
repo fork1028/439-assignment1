@@ -90,6 +90,13 @@ public class HALController {
 	
 	// sensor
 
+	/**
+	 * 
+	 * @param roomName
+	 * @param sensorDeviceName
+	 * @param sensorDeviceType
+	 * @return
+	 */
 	public static String addSensor(String roomName, String sensorDeviceName, SensorDeviceType sensorDeviceType) {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
@@ -107,6 +114,11 @@ public class HALController {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param sensorDeviceName
+	 * @return
+	 */
 	public static String removeSensor(String sensorDeviceName) {
 		SensorDevice sd = findSensorDevice(sensorDeviceName);
 		if (sd != null) {
@@ -120,6 +132,13 @@ public class HALController {
 	
 	// actuator
 	
+	/**
+	 * 
+	 * @param roomName
+	 * @param actuatorDeviceName
+	 * @param actuatorDeviceType
+	 * @return
+	 */
 	public static String addActuator(String roomName, String actuatorDeviceName, ActuatorDeviceType actuatorDeviceType) {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
@@ -137,6 +156,11 @@ public class HALController {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param actuatorDeviceName
+	 * @return
+	 */
 	public static String removeActuator(String actuatorDeviceName) {
 		ActuatorDevice ad = findActuatorDevice(actuatorDeviceName);
 		if (ad != null) {
@@ -170,6 +194,11 @@ public class HALController {
 	
 	// sensor
 
+	/**
+	 * 
+	 * @param sensorDeviceName
+	 * @return
+	 */
 	private static SensorDevice findSensorDevice(String sensorDeviceName) {
 		SmartHome smartHome = HALApplication.getSmartHome();
 		for (SensorDevice sd : smartHome.getSensordevice()) {
@@ -180,6 +209,12 @@ public class HALController {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param sensorDeviceType
+	 * @param roomName
+	 * @return
+	 */
 	private static Boolean existsSensorDeviceType(SensorDeviceType sensorDeviceType, String roomName) {
 		Room r = findRoom(roomName);
 		for (SensorDevice sd : r.getSensordevice()) {
@@ -192,6 +227,11 @@ public class HALController {
 	
 	// actuator
 	
+	/**
+	 * 
+	 * @param actuatorDeviceName
+	 * @return
+	 */
 	private static ActuatorDevice findActuatorDevice(String actuatorDeviceName) {
 		SmartHome smartHome = HALApplication.getSmartHome();
 		for (ActuatorDevice ad : smartHome.getActuatordevice()) {
@@ -202,6 +242,12 @@ public class HALController {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param actuatorDeviceType
+	 * @param roomName
+	 * @return
+	 */
 	private static Boolean existsActuatorDeviceType(ActuatorDeviceType actuatorDeviceType, String roomName) {
 		Room r = findRoom(roomName);
 		for (ActuatorDevice ad : r.getActuatordevice()) {
