@@ -123,19 +123,21 @@ public class HalSwitch<T> extends Switch<T> {
 			case HalPackage.SENSOR_DEVICE_TYPE: {
 				SensorDeviceType sensorDeviceType = (SensorDeviceType)theEObject;
 				T result = caseSensorDeviceType(sensorDeviceType);
+				if (result == null) result = caseDeviceType(sensorDeviceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case HalPackage.ACTUATOR_DEVICE_TYPE: {
 				ActuatorDeviceType actuatorDeviceType = (ActuatorDeviceType)theEObject;
 				T result = caseActuatorDeviceType(actuatorDeviceType);
+				if (result == null) result = caseDeviceType(actuatorDeviceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HalPackage.LOGIC_BOOL: {
-				LogicBool logicBool = (LogicBool)theEObject;
-				T result = caseLogicBool(logicBool);
-				if (result == null) result = casePrecondition(logicBool);
+			case HalPackage.LEAF: {
+				Leaf leaf = (Leaf)theEObject;
+				T result = caseLeaf(leaf);
+				if (result == null) result = casePrecondition(leaf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -149,6 +151,12 @@ public class HalSwitch<T> extends Switch<T> {
 			case HalPackage.SMART_HOME: {
 				SmartHome smartHome = (SmartHome)theEObject;
 				T result = caseSmartHome(smartHome);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HalPackage.DEVICE_TYPE: {
+				DeviceType deviceType = (DeviceType)theEObject;
+				T result = caseDeviceType(deviceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -322,17 +330,17 @@ public class HalSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Logic Bool</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Logic Bool</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Leaf</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLogicBool(LogicBool object) {
+	public T caseLeaf(Leaf object) {
 		return null;
 	}
 
@@ -363,6 +371,21 @@ public class HalSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSmartHome(SmartHome object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Device Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Device Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeviceType(DeviceType object) {
 		return null;
 	}
 

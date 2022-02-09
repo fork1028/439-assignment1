@@ -25,14 +25,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreconditionImpl#getPreconditionId <em>Precondition Id</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreconditionImpl#getConstraintValue <em>Constraint Value</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreconditionImpl#getAutomationrule <em>Automationrule</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreconditionImpl#getSensordevice <em>Sensordevice</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PreconditionImpl extends MinimalEObjectImpl.Container implements Precondition {
+public abstract class PreconditionImpl extends MinimalEObjectImpl.Container implements Precondition {
 	/**
 	 * The default value of the '{@link #getPreconditionId() <em>Precondition Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,26 +51,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @ordered
 	 */
 	protected String preconditionId = PRECONDITION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getConstraintValue() <em>Constraint Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstraintValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONSTRAINT_VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConstraintValue() <em>Constraint Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstraintValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String constraintValue = CONSTRAINT_VALUE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAutomationrule() <em>Automationrule</em>}' reference.
@@ -131,27 +110,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 		preconditionId = newPreconditionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.PRECONDITION__PRECONDITION_ID, oldPreconditionId, preconditionId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getConstraintValue() {
-		return constraintValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConstraintValue(String newConstraintValue) {
-		String oldConstraintValue = constraintValue;
-		constraintValue = newConstraintValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.PRECONDITION__CONSTRAINT_VALUE, oldConstraintValue, constraintValue));
 	}
 
 	/**
@@ -320,8 +278,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 		switch (featureID) {
 			case HalPackage.PRECONDITION__PRECONDITION_ID:
 				return getPreconditionId();
-			case HalPackage.PRECONDITION__CONSTRAINT_VALUE:
-				return getConstraintValue();
 			case HalPackage.PRECONDITION__AUTOMATIONRULE:
 				if (resolve) return getAutomationrule();
 				return basicGetAutomationrule();
@@ -342,9 +298,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 		switch (featureID) {
 			case HalPackage.PRECONDITION__PRECONDITION_ID:
 				setPreconditionId((String)newValue);
-				return;
-			case HalPackage.PRECONDITION__CONSTRAINT_VALUE:
-				setConstraintValue((String)newValue);
 				return;
 			case HalPackage.PRECONDITION__AUTOMATIONRULE:
 				setAutomationrule((AutomationRule)newValue);
@@ -367,9 +320,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 			case HalPackage.PRECONDITION__PRECONDITION_ID:
 				setPreconditionId(PRECONDITION_ID_EDEFAULT);
 				return;
-			case HalPackage.PRECONDITION__CONSTRAINT_VALUE:
-				setConstraintValue(CONSTRAINT_VALUE_EDEFAULT);
-				return;
 			case HalPackage.PRECONDITION__AUTOMATIONRULE:
 				setAutomationrule((AutomationRule)null);
 				return;
@@ -390,8 +340,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 		switch (featureID) {
 			case HalPackage.PRECONDITION__PRECONDITION_ID:
 				return PRECONDITION_ID_EDEFAULT == null ? preconditionId != null : !PRECONDITION_ID_EDEFAULT.equals(preconditionId);
-			case HalPackage.PRECONDITION__CONSTRAINT_VALUE:
-				return CONSTRAINT_VALUE_EDEFAULT == null ? constraintValue != null : !CONSTRAINT_VALUE_EDEFAULT.equals(constraintValue);
 			case HalPackage.PRECONDITION__AUTOMATIONRULE:
 				return automationrule != null;
 			case HalPackage.PRECONDITION__SENSORDEVICE:
@@ -412,8 +360,6 @@ public class PreconditionImpl extends MinimalEObjectImpl.Container implements Pr
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (preconditionId: ");
 		result.append(preconditionId);
-		result.append(", constraintValue: ");
-		result.append(constraintValue);
 		result.append(')');
 		return result.toString();
 	}

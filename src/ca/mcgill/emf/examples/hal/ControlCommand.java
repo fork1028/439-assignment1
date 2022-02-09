@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.ControlCommand#getCommandId <em>Command Id</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.ControlCommand#getControlTimestamp <em>Control Timestamp</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevice <em>Actuatordevice</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevicetype <em>Actuatordevicetype</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.ControlCommand#getActivitylog <em>Activitylog</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.ControlCommand#getAction <em>Action</em>}</li>
  * </ul>
@@ -70,28 +70,28 @@ public interface ControlCommand extends EObject {
 	void setControlTimestamp(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Actuatordevice</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getControlcommand <em>Controlcommand</em>}'.
+	 * Returns the value of the '<em><b>Actuatordevicetype</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ActuatorDeviceType#getControlcommand <em>Controlcommand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Actuatordevice</em>' reference.
-	 * @see #setActuatordevice(ActuatorDevice)
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getControlCommand_Actuatordevice()
-	 * @see ca.mcgill.emf.examples.hal.ActuatorDevice#getControlcommand
+	 * @return the value of the '<em>Actuatordevicetype</em>' reference.
+	 * @see #setActuatordevicetype(ActuatorDeviceType)
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getControlCommand_Actuatordevicetype()
+	 * @see ca.mcgill.emf.examples.hal.ActuatorDeviceType#getControlcommand
 	 * @model opposite="controlcommand" required="true"
 	 * @generated
 	 */
-	ActuatorDevice getActuatordevice();
+	ActuatorDeviceType getActuatordevicetype();
 
 	/**
-	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevice <em>Actuatordevice</em>}' reference.
+	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevicetype <em>Actuatordevicetype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Actuatordevice</em>' reference.
-	 * @see #getActuatordevice()
+	 * @param value the new value of the '<em>Actuatordevicetype</em>' reference.
+	 * @see #getActuatordevicetype()
 	 * @generated
 	 */
-	void setActuatordevice(ActuatorDevice value);
+	void setActuatordevicetype(ActuatorDeviceType value);
 
 	/**
 	 * Returns the value of the '<em><b>Activitylog</b></em>' reference.

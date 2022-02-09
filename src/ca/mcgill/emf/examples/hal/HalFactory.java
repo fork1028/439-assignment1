@@ -31,15 +31,6 @@ public interface HalFactory extends EFactory {
 	AutomationRule createAutomationRule();
 
 	/**
-	 * Returns a new object of class '<em>Precondition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Precondition</em>'.
-	 * @generated
-	 */
-	Precondition createPrecondition();
-
-	/**
 	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,13 +112,13 @@ public interface HalFactory extends EFactory {
 	ActuatorDeviceType createActuatorDeviceType();
 
 	/**
-	 * Returns a new object of class '<em>Logic Bool</em>'.
+	 * Returns a new object of class '<em>Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Logic Bool</em>'.
+	 * @return a new object of class '<em>Leaf</em>'.
 	 * @generated
 	 */
-	LogicBool createLogicBool();
+	Leaf createLeaf();
 
 	/**
 	 * Returns a new object of class '<em>Precondition Composite</em>'.

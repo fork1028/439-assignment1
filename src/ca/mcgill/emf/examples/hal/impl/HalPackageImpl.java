@@ -8,10 +8,11 @@ import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
 import ca.mcgill.emf.examples.hal.AutomationRule;
 import ca.mcgill.emf.examples.hal.ControlCommand;
+import ca.mcgill.emf.examples.hal.DeviceType;
 import ca.mcgill.emf.examples.hal.HalFactory;
 import ca.mcgill.emf.examples.hal.HalPackage;
+import ca.mcgill.emf.examples.hal.Leaf;
 import ca.mcgill.emf.examples.hal.Logic;
-import ca.mcgill.emf.examples.hal.LogicBool;
 import ca.mcgill.emf.examples.hal.Precondition;
 import ca.mcgill.emf.examples.hal.PreconditionComposite;
 import ca.mcgill.emf.examples.hal.Room;
@@ -117,7 +118,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass logicBoolEClass = null;
+	private EClass leafEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,6 +133,13 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	private EClass smartHomeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass deviceTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,17 +268,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPrecondition_ConstraintValue() {
-		return (EAttribute)preconditionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPrecondition_Automationrule() {
-		return (EReference)preconditionEClass.getEStructuralFeatures().get(2);
+		return (EReference)preconditionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -279,7 +278,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	public EReference getPrecondition_Sensordevice() {
-		return (EReference)preconditionEClass.getEStructuralFeatures().get(3);
+		return (EReference)preconditionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -431,7 +430,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlCommand_Actuatordevice() {
+	public EReference getControlCommand_Actuatordevicetype() {
 		return (EReference)controlCommandEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -593,15 +592,6 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActuatorDevice_Controlcommand() {
-		return (EReference)actuatorDeviceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSensorDeviceType() {
 		return sensorDeviceTypeEClass;
 	}
@@ -611,17 +601,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSensorDeviceType_SensorTypeName() {
-		return (EAttribute)sensorDeviceTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSensorDeviceType_Sensordevice() {
-		return (EReference)sensorDeviceTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference)sensorDeviceTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -638,8 +619,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getActuatorDeviceType_ActuatorTypeName() {
-		return (EAttribute)actuatorDeviceTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getActuatorDeviceType_Actuatordevice() {
+		return (EReference)actuatorDeviceTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -647,7 +628,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActuatorDeviceType_Actuatordevice() {
+	public EReference getActuatorDeviceType_Controlcommand() {
 		return (EReference)actuatorDeviceTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -656,8 +637,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLogicBool() {
-		return logicBoolEClass;
+	public EClass getLeaf() {
+		return leafEClass;
 	}
 
 	/**
@@ -665,8 +646,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLogicBool_Bool() {
-		return (EAttribute)logicBoolEClass.getEStructuralFeatures().get(0);
+	public EAttribute getLeaf_ConstraintValue() {
+		return (EAttribute)leafEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -685,6 +666,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 */
 	public EReference getPreconditionComposite_Precondition() {
 		return (EReference)preconditionCompositeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPreconditionComposite_Bool() {
+		return (EAttribute)preconditionCompositeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -737,6 +727,24 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDeviceType() {
+		return deviceTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDeviceType_TypeName() {
+		return (EAttribute)deviceTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getLogic() {
 		return logicEEnum;
 	}
@@ -776,7 +784,6 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		preconditionEClass = createEClass(PRECONDITION);
 		createEAttribute(preconditionEClass, PRECONDITION__PRECONDITION_ID);
-		createEAttribute(preconditionEClass, PRECONDITION__CONSTRAINT_VALUE);
 		createEReference(preconditionEClass, PRECONDITION__AUTOMATIONRULE);
 		createEReference(preconditionEClass, PRECONDITION__SENSORDEVICE);
 
@@ -799,7 +806,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		controlCommandEClass = createEClass(CONTROL_COMMAND);
 		createEAttribute(controlCommandEClass, CONTROL_COMMAND__COMMAND_ID);
 		createEAttribute(controlCommandEClass, CONTROL_COMMAND__CONTROL_TIMESTAMP);
-		createEReference(controlCommandEClass, CONTROL_COMMAND__ACTUATORDEVICE);
+		createEReference(controlCommandEClass, CONTROL_COMMAND__ACTUATORDEVICETYPE);
 		createEReference(controlCommandEClass, CONTROL_COMMAND__ACTIVITYLOG);
 		createEReference(controlCommandEClass, CONTROL_COMMAND__ACTION);
 
@@ -820,27 +827,29 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		createEAttribute(actuatorDeviceEClass, ACTUATOR_DEVICE__DEVICE_NAME);
 		createEReference(actuatorDeviceEClass, ACTUATOR_DEVICE__ACTUATORDEVICETYPE);
 		createEReference(actuatorDeviceEClass, ACTUATOR_DEVICE__ROOM);
-		createEReference(actuatorDeviceEClass, ACTUATOR_DEVICE__CONTROLCOMMAND);
 
 		sensorDeviceTypeEClass = createEClass(SENSOR_DEVICE_TYPE);
-		createEAttribute(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__SENSOR_TYPE_NAME);
 		createEReference(sensorDeviceTypeEClass, SENSOR_DEVICE_TYPE__SENSORDEVICE);
 
 		actuatorDeviceTypeEClass = createEClass(ACTUATOR_DEVICE_TYPE);
-		createEAttribute(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME);
 		createEReference(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE);
+		createEReference(actuatorDeviceTypeEClass, ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND);
 
-		logicBoolEClass = createEClass(LOGIC_BOOL);
-		createEAttribute(logicBoolEClass, LOGIC_BOOL__BOOL);
+		leafEClass = createEClass(LEAF);
+		createEAttribute(leafEClass, LEAF__CONSTRAINT_VALUE);
 
 		preconditionCompositeEClass = createEClass(PRECONDITION_COMPOSITE);
 		createEReference(preconditionCompositeEClass, PRECONDITION_COMPOSITE__PRECONDITION);
+		createEAttribute(preconditionCompositeEClass, PRECONDITION_COMPOSITE__BOOL);
 
 		smartHomeEClass = createEClass(SMART_HOME);
 		createEReference(smartHomeEClass, SMART_HOME__ROOM);
 		createEAttribute(smartHomeEClass, SMART_HOME__HOME_NAME);
 		createEReference(smartHomeEClass, SMART_HOME__SENSORDEVICE);
 		createEReference(smartHomeEClass, SMART_HOME__ACTUATORDEVICE);
+
+		deviceTypeEClass = createEClass(DEVICE_TYPE);
+		createEAttribute(deviceTypeEClass, DEVICE_TYPE__TYPE_NAME);
 
 		// Create enums
 		logicEEnum = createEEnum(LOGIC);
@@ -874,7 +883,9 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		logicBoolEClass.getESuperTypes().add(this.getPrecondition());
+		sensorDeviceTypeEClass.getESuperTypes().add(this.getDeviceType());
+		actuatorDeviceTypeEClass.getESuperTypes().add(this.getDeviceType());
+		leafEClass.getESuperTypes().add(this.getPrecondition());
 		preconditionCompositeEClass.getESuperTypes().add(this.getPrecondition());
 
 		// Initialize classes, features, and operations; add parameters
@@ -883,9 +894,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEReference(getAutomationRule_Precondition(), this.getPrecondition(), this.getPrecondition_Automationrule(), "precondition", null, 1, 1, AutomationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAutomationRule_Action(), this.getAction(), this.getAction_Automationrule(), "action", null, 1, 1, AutomationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(preconditionEClass, Precondition.class, "Precondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(preconditionEClass, Precondition.class, "Precondition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrecondition_PreconditionId(), ecorePackage.getEString(), "preconditionId", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPrecondition_ConstraintValue(), ecorePackage.getEString(), "constraintValue", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPrecondition_Automationrule(), this.getAutomationRule(), this.getAutomationRule_Precondition(), "automationrule", null, 1, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPrecondition_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Precondition(), "sensordevice", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -908,7 +918,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEClass(controlCommandEClass, ControlCommand.class, "ControlCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControlCommand_CommandId(), ecorePackage.getEString(), "commandId", null, 0, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControlCommand_ControlTimestamp(), ecorePackage.getEString(), "controlTimestamp", null, 0, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlCommand_Actuatordevice(), this.getActuatorDevice(), this.getActuatorDevice_Controlcommand(), "actuatordevice", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlCommand_Actuatordevicetype(), this.getActuatorDeviceType(), this.getActuatorDeviceType_Controlcommand(), "actuatordevicetype", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlCommand_Activitylog(), this.getActivityLog(), this.getActivityLog_Controlcommand(), "activitylog", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlCommand_Action(), this.getAction(), this.getAction_Controlcommand(), "action", null, 1, 1, ControlCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -929,27 +939,29 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEAttribute(getActuatorDevice_DeviceName(), ecorePackage.getEString(), "deviceName", null, 0, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActuatorDevice_Actuatordevicetype(), this.getActuatorDeviceType(), this.getActuatorDeviceType_Actuatordevice(), "actuatordevicetype", null, 1, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActuatorDevice_Room(), this.getRoom(), this.getRoom_Actuatordevice(), "room", null, 1, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActuatorDevice_Controlcommand(), this.getControlCommand(), this.getControlCommand_Actuatordevice(), "controlcommand", null, 0, 1, ActuatorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorDeviceTypeEClass, SensorDeviceType.class, "SensorDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensorDeviceType_SensorTypeName(), ecorePackage.getEString(), "sensorTypeName", null, 0, 1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensorDeviceType_Sensordevice(), this.getSensorDevice(), this.getSensorDevice_Sensordevicetype(), "sensordevice", null, 0, -1, SensorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorDeviceTypeEClass, ActuatorDeviceType.class, "ActuatorDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActuatorDeviceType_ActuatorTypeName(), ecorePackage.getEString(), "actuatorTypeName", null, 0, 1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActuatorDeviceType_Actuatordevice(), this.getActuatorDevice(), this.getActuatorDevice_Actuatordevicetype(), "actuatordevice", null, 0, -1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActuatorDeviceType_Controlcommand(), this.getControlCommand(), this.getControlCommand_Actuatordevicetype(), "controlcommand", null, 0, 1, ActuatorDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(logicBoolEClass, LogicBool.class, "LogicBool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLogicBool_Bool(), this.getLogic(), "bool", null, 0, 1, LogicBool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(leafEClass, Leaf.class, "Leaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLeaf_ConstraintValue(), ecorePackage.getEString(), "constraintValue", null, 0, 1, Leaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(preconditionCompositeEClass, PreconditionComposite.class, "PreconditionComposite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPreconditionComposite_Precondition(), this.getPrecondition(), null, "precondition", null, 0, -1, PreconditionComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPreconditionComposite_Bool(), this.getLogic(), "bool", null, 0, 1, PreconditionComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(smartHomeEClass, SmartHome.class, "SmartHome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSmartHome_Room(), this.getRoom(), null, "room", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSmartHome_HomeName(), ecorePackage.getEString(), "homeName", null, 0, 1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartHome_Sensordevice(), this.getSensorDevice(), null, "sensordevice", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartHome_Actuatordevice(), this.getActuatorDevice(), null, "actuatordevice", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(deviceTypeEClass, DeviceType.class, "DeviceType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeviceType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(logicEEnum, Logic.class, "Logic");

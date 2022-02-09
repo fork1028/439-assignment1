@@ -4,6 +4,7 @@ package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
+import ca.mcgill.emf.examples.hal.ControlCommand;
 import ca.mcgill.emf.examples.hal.HalPackage;
 
 import java.util.Collection;
@@ -17,7 +18,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,33 +30,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceTypeImpl#getActuatorTypeName <em>Actuator Type Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceTypeImpl#getActuatordevice <em>Actuatordevice</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceTypeImpl#getControlcommand <em>Controlcommand</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container implements ActuatorDeviceType {
-	/**
-	 * The default value of the '{@link #getActuatorTypeName() <em>Actuator Type Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActuatorTypeName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACTUATOR_TYPE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getActuatorTypeName() <em>Actuator Type Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActuatorTypeName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String actuatorTypeName = ACTUATOR_TYPE_NAME_EDEFAULT;
-
+public class ActuatorDeviceTypeImpl extends DeviceTypeImpl implements ActuatorDeviceType {
 	/**
 	 * The cached value of the '{@link #getActuatordevice() <em>Actuatordevice</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -66,6 +46,16 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<ActuatorDevice> actuatordevice;
+
+	/**
+	 * The cached value of the '{@link #getControlcommand() <em>Controlcommand</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControlcommand()
+	 * @generated
+	 * @ordered
+	 */
+	protected ControlCommand controlcommand;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,32 +81,71 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getActuatorTypeName() {
-		return actuatorTypeName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setActuatorTypeName(String newActuatorTypeName) {
-		String oldActuatorTypeName = actuatorTypeName;
-		actuatorTypeName = newActuatorTypeName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME, oldActuatorTypeName, actuatorTypeName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ActuatorDevice> getActuatordevice() {
 		if (actuatordevice == null) {
 			actuatordevice = new EObjectWithInverseResolvingEList<ActuatorDevice>(ActuatorDevice.class, this, HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE, HalPackage.ACTUATOR_DEVICE__ACTUATORDEVICETYPE);
 		}
 		return actuatordevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControlCommand getControlcommand() {
+		if (controlcommand != null && controlcommand.eIsProxy()) {
+			InternalEObject oldControlcommand = (InternalEObject)controlcommand;
+			controlcommand = (ControlCommand)eResolveProxy(oldControlcommand);
+			if (controlcommand != oldControlcommand) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND, oldControlcommand, controlcommand));
+			}
+		}
+		return controlcommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControlCommand basicGetControlcommand() {
+		return controlcommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetControlcommand(ControlCommand newControlcommand, NotificationChain msgs) {
+		ControlCommand oldControlcommand = controlcommand;
+		controlcommand = newControlcommand;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND, oldControlcommand, newControlcommand);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControlcommand(ControlCommand newControlcommand) {
+		if (newControlcommand != controlcommand) {
+			NotificationChain msgs = null;
+			if (controlcommand != null)
+				msgs = ((InternalEObject)controlcommand).eInverseRemove(this, HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE, ControlCommand.class, msgs);
+			if (newControlcommand != null)
+				msgs = ((InternalEObject)newControlcommand).eInverseAdd(this, HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE, ControlCommand.class, msgs);
+			msgs = basicSetControlcommand(newControlcommand, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND, newControlcommand, newControlcommand));
 	}
 
 	/**
@@ -130,6 +159,10 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActuatordevice()).basicAdd(otherEnd, msgs);
+			case HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND:
+				if (controlcommand != null)
+					msgs = ((InternalEObject)controlcommand).eInverseRemove(this, HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE, ControlCommand.class, msgs);
+				return basicSetControlcommand((ControlCommand)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -144,6 +177,8 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE:
 				return ((InternalEList<?>)getActuatordevice()).basicRemove(otherEnd, msgs);
+			case HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND:
+				return basicSetControlcommand(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -156,10 +191,11 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME:
-				return getActuatorTypeName();
 			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE:
 				return getActuatordevice();
+			case HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND:
+				if (resolve) return getControlcommand();
+				return basicGetControlcommand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,12 +209,12 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME:
-				setActuatorTypeName((String)newValue);
-				return;
 			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE:
 				getActuatordevice().clear();
 				getActuatordevice().addAll((Collection<? extends ActuatorDevice>)newValue);
+				return;
+			case HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND:
+				setControlcommand((ControlCommand)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,11 +228,11 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME:
-				setActuatorTypeName(ACTUATOR_TYPE_NAME_EDEFAULT);
-				return;
 			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE:
 				getActuatordevice().clear();
+				return;
+			case HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND:
+				setControlcommand((ControlCommand)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,28 +246,12 @@ public class ActuatorDeviceTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATOR_TYPE_NAME:
-				return ACTUATOR_TYPE_NAME_EDEFAULT == null ? actuatorTypeName != null : !ACTUATOR_TYPE_NAME_EDEFAULT.equals(actuatorTypeName);
 			case HalPackage.ACTUATOR_DEVICE_TYPE__ACTUATORDEVICE:
 				return actuatordevice != null && !actuatordevice.isEmpty();
+			case HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND:
+				return controlcommand != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (actuatorTypeName: ");
-		result.append(actuatorTypeName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ActuatorDeviceTypeImpl

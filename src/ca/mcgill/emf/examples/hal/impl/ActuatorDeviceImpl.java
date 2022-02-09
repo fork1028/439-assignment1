@@ -4,7 +4,6 @@ package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
-import ca.mcgill.emf.examples.hal.ControlCommand;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.Room;
 
@@ -28,7 +27,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceImpl#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceImpl#getActuatordevicetype <em>Actuatordevicetype</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceImpl#getRoom <em>Room</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.ActuatorDeviceImpl#getControlcommand <em>Controlcommand</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,16 +71,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected Room room;
-
-	/**
-	 * The cached value of the '{@link #getControlcommand() <em>Controlcommand</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControlcommand()
-	 * @generated
-	 * @ordered
-	 */
-	protected ControlCommand controlcommand;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,66 +237,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlCommand getControlcommand() {
-		if (controlcommand != null && controlcommand.eIsProxy()) {
-			InternalEObject oldControlcommand = (InternalEObject)controlcommand;
-			controlcommand = (ControlCommand)eResolveProxy(oldControlcommand);
-			if (controlcommand != oldControlcommand) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND, oldControlcommand, controlcommand));
-			}
-		}
-		return controlcommand;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ControlCommand basicGetControlcommand() {
-		return controlcommand;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetControlcommand(ControlCommand newControlcommand, NotificationChain msgs) {
-		ControlCommand oldControlcommand = controlcommand;
-		controlcommand = newControlcommand;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND, oldControlcommand, newControlcommand);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setControlcommand(ControlCommand newControlcommand) {
-		if (newControlcommand != controlcommand) {
-			NotificationChain msgs = null;
-			if (controlcommand != null)
-				msgs = ((InternalEObject)controlcommand).eInverseRemove(this, HalPackage.CONTROL_COMMAND__ACTUATORDEVICE, ControlCommand.class, msgs);
-			if (newControlcommand != null)
-				msgs = ((InternalEObject)newControlcommand).eInverseAdd(this, HalPackage.CONTROL_COMMAND__ACTUATORDEVICE, ControlCommand.class, msgs);
-			msgs = basicSetControlcommand(newControlcommand, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND, newControlcommand, newControlcommand));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -320,10 +248,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 				if (room != null)
 					msgs = ((InternalEObject)room).eInverseRemove(this, HalPackage.ROOM__ACTUATORDEVICE, Room.class, msgs);
 				return basicSetRoom((Room)otherEnd, msgs);
-			case HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND:
-				if (controlcommand != null)
-					msgs = ((InternalEObject)controlcommand).eInverseRemove(this, HalPackage.CONTROL_COMMAND__ACTUATORDEVICE, ControlCommand.class, msgs);
-				return basicSetControlcommand((ControlCommand)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -340,8 +264,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 				return basicSetActuatordevicetype(null, msgs);
 			case HalPackage.ACTUATOR_DEVICE__ROOM:
 				return basicSetRoom(null, msgs);
-			case HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND:
-				return basicSetControlcommand(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,9 +284,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 			case HalPackage.ACTUATOR_DEVICE__ROOM:
 				if (resolve) return getRoom();
 				return basicGetRoom();
-			case HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND:
-				if (resolve) return getControlcommand();
-				return basicGetControlcommand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -385,9 +304,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case HalPackage.ACTUATOR_DEVICE__ROOM:
 				setRoom((Room)newValue);
-				return;
-			case HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND:
-				setControlcommand((ControlCommand)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -410,9 +326,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 			case HalPackage.ACTUATOR_DEVICE__ROOM:
 				setRoom((Room)null);
 				return;
-			case HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND:
-				setControlcommand((ControlCommand)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -431,8 +344,6 @@ public class ActuatorDeviceImpl extends MinimalEObjectImpl.Container implements 
 				return actuatordevicetype != null;
 			case HalPackage.ACTUATOR_DEVICE__ROOM:
 				return room != null;
-			case HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND:
-				return controlcommand != null;
 		}
 		return super.eIsSet(featureID);
 	}

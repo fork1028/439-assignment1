@@ -2,56 +2,56 @@
  */
 package ca.mcgill.emf.examples.hal.impl;
 
+import ca.mcgill.emf.examples.hal.DeviceType;
 import ca.mcgill.emf.examples.hal.HalPackage;
-import ca.mcgill.emf.examples.hal.Logic;
-import ca.mcgill.emf.examples.hal.LogicBool;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Logic Bool</b></em>'.
+ * An implementation of the model object '<em><b>Device Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.LogicBoolImpl#getBool <em>Bool</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.DeviceTypeImpl#getTypeName <em>Type Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
+public abstract class DeviceTypeImpl extends MinimalEObjectImpl.Container implements DeviceType {
 	/**
-	 * The default value of the '{@link #getBool() <em>Bool</em>}' attribute.
+	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBool()
+	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Logic BOOL_EDEFAULT = Logic.AND;
+	protected static final String TYPE_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getBool() <em>Bool</em>}' attribute.
+	 * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBool()
+	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
 	 */
-	protected Logic bool = BOOL_EDEFAULT;
+	protected String typeName = TYPE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LogicBoolImpl() {
+	protected DeviceTypeImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HalPackage.Literals.LOGIC_BOOL;
+		return HalPackage.Literals.DEVICE_TYPE;
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Logic getBool() {
-		return bool;
+	public String getTypeName() {
+		return typeName;
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBool(Logic newBool) {
-		Logic oldBool = bool;
-		bool = newBool == null ? BOOL_EDEFAULT : newBool;
+	public void setTypeName(String newTypeName) {
+		String oldTypeName = typeName;
+		typeName = newTypeName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.LOGIC_BOOL__BOOL, oldBool, bool));
+			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.DEVICE_TYPE__TYPE_NAME, oldTypeName, typeName));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HalPackage.LOGIC_BOOL__BOOL:
-				return getBool();
+			case HalPackage.DEVICE_TYPE__TYPE_NAME:
+				return getTypeName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +108,8 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HalPackage.LOGIC_BOOL__BOOL:
-				setBool((Logic)newValue);
+			case HalPackage.DEVICE_TYPE__TYPE_NAME:
+				setTypeName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HalPackage.LOGIC_BOOL__BOOL:
-				setBool(BOOL_EDEFAULT);
+			case HalPackage.DEVICE_TYPE__TYPE_NAME:
+				setTypeName(TYPE_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HalPackage.LOGIC_BOOL__BOOL:
-				return bool != BOOL_EDEFAULT;
+			case HalPackage.DEVICE_TYPE__TYPE_NAME:
+				return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,10 +154,10 @@ public class LogicBoolImpl extends PreconditionImpl implements LogicBool {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (bool: ");
-		result.append(bool);
+		result.append(" (typeName: ");
+		result.append(typeName);
 		result.append(')');
 		return result.toString();
 	}
 
-} //LogicBoolImpl
+} //DeviceTypeImpl

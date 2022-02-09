@@ -58,7 +58,6 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case HalPackage.AUTOMATION_RULE: return createAutomationRule();
-			case HalPackage.PRECONDITION: return createPrecondition();
 			case HalPackage.ACTION: return createAction();
 			case HalPackage.ACTIVITY_LOG: return createActivityLog();
 			case HalPackage.SENSOR_READING: return createSensorReading();
@@ -68,7 +67,7 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 			case HalPackage.ACTUATOR_DEVICE: return createActuatorDevice();
 			case HalPackage.SENSOR_DEVICE_TYPE: return createSensorDeviceType();
 			case HalPackage.ACTUATOR_DEVICE_TYPE: return createActuatorDeviceType();
-			case HalPackage.LOGIC_BOOL: return createLogicBool();
+			case HalPackage.LEAF: return createLeaf();
 			case HalPackage.PRECONDITION_COMPOSITE: return createPreconditionComposite();
 			case HalPackage.SMART_HOME: return createSmartHome();
 			default:
@@ -114,16 +113,6 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	public AutomationRule createAutomationRule() {
 		AutomationRuleImpl automationRule = new AutomationRuleImpl();
 		return automationRule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Precondition createPrecondition() {
-		PreconditionImpl precondition = new PreconditionImpl();
-		return precondition;
 	}
 
 	/**
@@ -221,9 +210,9 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LogicBool createLogicBool() {
-		LogicBoolImpl logicBool = new LogicBoolImpl();
-		return logicBool;
+	public Leaf createLeaf() {
+		LeafImpl leaf = new LeafImpl();
+		return leaf;
 	}
 
 	/**

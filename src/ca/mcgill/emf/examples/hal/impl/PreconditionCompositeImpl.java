@@ -3,17 +3,21 @@
 package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.HalPackage;
+import ca.mcgill.emf.examples.hal.Logic;
 import ca.mcgill.emf.examples.hal.Precondition;
 import ca.mcgill.emf.examples.hal.PreconditionComposite;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreconditionCompositeImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreconditionCompositeImpl#getBool <em>Bool</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +46,26 @@ public class PreconditionCompositeImpl extends PreconditionImpl implements Preco
 	 * @ordered
 	 */
 	protected EList<Precondition> precondition;
+
+	/**
+	 * The default value of the '{@link #getBool() <em>Bool</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBool()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Logic BOOL_EDEFAULT = Logic.AND;
+
+	/**
+	 * The cached value of the '{@link #getBool() <em>Bool</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBool()
+	 * @generated
+	 * @ordered
+	 */
+	protected Logic bool = BOOL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,6 +103,27 @@ public class PreconditionCompositeImpl extends PreconditionImpl implements Preco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Logic getBool() {
+		return bool;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBool(Logic newBool) {
+		Logic oldBool = bool;
+		bool = newBool == null ? BOOL_EDEFAULT : newBool;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.PRECONDITION_COMPOSITE__BOOL, oldBool, bool));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -97,6 +143,8 @@ public class PreconditionCompositeImpl extends PreconditionImpl implements Preco
 		switch (featureID) {
 			case HalPackage.PRECONDITION_COMPOSITE__PRECONDITION:
 				return getPrecondition();
+			case HalPackage.PRECONDITION_COMPOSITE__BOOL:
+				return getBool();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,6 +162,9 @@ public class PreconditionCompositeImpl extends PreconditionImpl implements Preco
 				getPrecondition().clear();
 				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
 				return;
+			case HalPackage.PRECONDITION_COMPOSITE__BOOL:
+				setBool((Logic)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,6 +180,9 @@ public class PreconditionCompositeImpl extends PreconditionImpl implements Preco
 			case HalPackage.PRECONDITION_COMPOSITE__PRECONDITION:
 				getPrecondition().clear();
 				return;
+			case HalPackage.PRECONDITION_COMPOSITE__BOOL:
+				setBool(BOOL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,8 +197,26 @@ public class PreconditionCompositeImpl extends PreconditionImpl implements Preco
 		switch (featureID) {
 			case HalPackage.PRECONDITION_COMPOSITE__PRECONDITION:
 				return precondition != null && !precondition.isEmpty();
+			case HalPackage.PRECONDITION_COMPOSITE__BOOL:
+				return bool != BOOL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (bool: ");
+		result.append(bool);
+		result.append(')');
+		return result.toString();
 	}
 
 } //PreconditionCompositeImpl

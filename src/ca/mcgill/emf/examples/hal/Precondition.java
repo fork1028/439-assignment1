@@ -14,13 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.Precondition#getPreconditionId <em>Precondition Id</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.Precondition#getConstraintValue <em>Constraint Value</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.Precondition#getAutomationrule <em>Automationrule</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.Precondition#getSensordevice <em>Sensordevice</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getPrecondition()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Precondition extends EObject {
@@ -45,28 +44,6 @@ public interface Precondition extends EObject {
 	 * @generated
 	 */
 	void setPreconditionId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Constraint Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Constraint Value</em>' attribute.
-	 * @see #setConstraintValue(String)
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getPrecondition_ConstraintValue()
-	 * @model
-	 * @generated
-	 */
-	String getConstraintValue();
-
-	/**
-	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.Precondition#getConstraintValue <em>Constraint Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Constraint Value</em>' attribute.
-	 * @see #getConstraintValue()
-	 * @generated
-	 */
-	void setConstraintValue(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Automationrule</b></em>' reference.

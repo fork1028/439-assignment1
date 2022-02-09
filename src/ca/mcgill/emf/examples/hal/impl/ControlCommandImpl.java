@@ -4,7 +4,7 @@ package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.Action;
 import ca.mcgill.emf.examples.hal.ActivityLog;
-import ca.mcgill.emf.examples.hal.ActuatorDevice;
+import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
 import ca.mcgill.emf.examples.hal.ControlCommand;
 import ca.mcgill.emf.examples.hal.HalPackage;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ControlCommandImpl#getCommandId <em>Command Id</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ControlCommandImpl#getControlTimestamp <em>Control Timestamp</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.ControlCommandImpl#getActuatordevice <em>Actuatordevice</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.ControlCommandImpl#getActuatordevicetype <em>Actuatordevicetype</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ControlCommandImpl#getActivitylog <em>Activitylog</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.ControlCommandImpl#getAction <em>Action</em>}</li>
  * </ul>
@@ -76,14 +76,14 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	protected String controlTimestamp = CONTROL_TIMESTAMP_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getActuatordevice() <em>Actuatordevice</em>}' reference.
+	 * The cached value of the '{@link #getActuatordevicetype() <em>Actuatordevicetype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActuatordevice()
+	 * @see #getActuatordevicetype()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActuatorDevice actuatordevice;
+	protected ActuatorDeviceType actuatordevicetype;
 
 	/**
 	 * The cached value of the '{@link #getActivitylog() <em>Activitylog</em>}' reference.
@@ -171,16 +171,16 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActuatorDevice getActuatordevice() {
-		if (actuatordevice != null && actuatordevice.eIsProxy()) {
-			InternalEObject oldActuatordevice = (InternalEObject)actuatordevice;
-			actuatordevice = (ActuatorDevice)eResolveProxy(oldActuatordevice);
-			if (actuatordevice != oldActuatordevice) {
+	public ActuatorDeviceType getActuatordevicetype() {
+		if (actuatordevicetype != null && actuatordevicetype.eIsProxy()) {
+			InternalEObject oldActuatordevicetype = (InternalEObject)actuatordevicetype;
+			actuatordevicetype = (ActuatorDeviceType)eResolveProxy(oldActuatordevicetype);
+			if (actuatordevicetype != oldActuatordevicetype) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.CONTROL_COMMAND__ACTUATORDEVICE, oldActuatordevice, actuatordevice));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE, oldActuatordevicetype, actuatordevicetype));
 			}
 		}
-		return actuatordevice;
+		return actuatordevicetype;
 	}
 
 	/**
@@ -188,8 +188,8 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActuatorDevice basicGetActuatordevice() {
-		return actuatordevice;
+	public ActuatorDeviceType basicGetActuatordevicetype() {
+		return actuatordevicetype;
 	}
 
 	/**
@@ -197,11 +197,11 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetActuatordevice(ActuatorDevice newActuatordevice, NotificationChain msgs) {
-		ActuatorDevice oldActuatordevice = actuatordevice;
-		actuatordevice = newActuatordevice;
+	public NotificationChain basicSetActuatordevicetype(ActuatorDeviceType newActuatordevicetype, NotificationChain msgs) {
+		ActuatorDeviceType oldActuatordevicetype = actuatordevicetype;
+		actuatordevicetype = newActuatordevicetype;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.CONTROL_COMMAND__ACTUATORDEVICE, oldActuatordevice, newActuatordevice);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE, oldActuatordevicetype, newActuatordevicetype);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -212,18 +212,18 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActuatordevice(ActuatorDevice newActuatordevice) {
-		if (newActuatordevice != actuatordevice) {
+	public void setActuatordevicetype(ActuatorDeviceType newActuatordevicetype) {
+		if (newActuatordevicetype != actuatordevicetype) {
 			NotificationChain msgs = null;
-			if (actuatordevice != null)
-				msgs = ((InternalEObject)actuatordevice).eInverseRemove(this, HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND, ActuatorDevice.class, msgs);
-			if (newActuatordevice != null)
-				msgs = ((InternalEObject)newActuatordevice).eInverseAdd(this, HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND, ActuatorDevice.class, msgs);
-			msgs = basicSetActuatordevice(newActuatordevice, msgs);
+			if (actuatordevicetype != null)
+				msgs = ((InternalEObject)actuatordevicetype).eInverseRemove(this, HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND, ActuatorDeviceType.class, msgs);
+			if (newActuatordevicetype != null)
+				msgs = ((InternalEObject)newActuatordevicetype).eInverseAdd(this, HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND, ActuatorDeviceType.class, msgs);
+			msgs = basicSetActuatordevicetype(newActuatordevicetype, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.CONTROL_COMMAND__ACTUATORDEVICE, newActuatordevice, newActuatordevice));
+			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE, newActuatordevicetype, newActuatordevicetype));
 	}
 
 	/**
@@ -354,10 +354,10 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICE:
-				if (actuatordevice != null)
-					msgs = ((InternalEObject)actuatordevice).eInverseRemove(this, HalPackage.ACTUATOR_DEVICE__CONTROLCOMMAND, ActuatorDevice.class, msgs);
-				return basicSetActuatordevice((ActuatorDevice)otherEnd, msgs);
+			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE:
+				if (actuatordevicetype != null)
+					msgs = ((InternalEObject)actuatordevicetype).eInverseRemove(this, HalPackage.ACTUATOR_DEVICE_TYPE__CONTROLCOMMAND, ActuatorDeviceType.class, msgs);
+				return basicSetActuatordevicetype((ActuatorDeviceType)otherEnd, msgs);
 			case HalPackage.CONTROL_COMMAND__ACTIVITYLOG:
 				if (activitylog != null)
 					msgs = ((InternalEObject)activitylog).eInverseRemove(this, HalPackage.ACTIVITY_LOG__CONTROLCOMMAND, ActivityLog.class, msgs);
@@ -378,8 +378,8 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICE:
-				return basicSetActuatordevice(null, msgs);
+			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE:
+				return basicSetActuatordevicetype(null, msgs);
 			case HalPackage.CONTROL_COMMAND__ACTIVITYLOG:
 				return basicSetActivitylog(null, msgs);
 			case HalPackage.CONTROL_COMMAND__ACTION:
@@ -400,9 +400,9 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 				return getCommandId();
 			case HalPackage.CONTROL_COMMAND__CONTROL_TIMESTAMP:
 				return getControlTimestamp();
-			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICE:
-				if (resolve) return getActuatordevice();
-				return basicGetActuatordevice();
+			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE:
+				if (resolve) return getActuatordevicetype();
+				return basicGetActuatordevicetype();
 			case HalPackage.CONTROL_COMMAND__ACTIVITYLOG:
 				if (resolve) return getActivitylog();
 				return basicGetActivitylog();
@@ -427,8 +427,8 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 			case HalPackage.CONTROL_COMMAND__CONTROL_TIMESTAMP:
 				setControlTimestamp((String)newValue);
 				return;
-			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICE:
-				setActuatordevice((ActuatorDevice)newValue);
+			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE:
+				setActuatordevicetype((ActuatorDeviceType)newValue);
 				return;
 			case HalPackage.CONTROL_COMMAND__ACTIVITYLOG:
 				setActivitylog((ActivityLog)newValue);
@@ -454,8 +454,8 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 			case HalPackage.CONTROL_COMMAND__CONTROL_TIMESTAMP:
 				setControlTimestamp(CONTROL_TIMESTAMP_EDEFAULT);
 				return;
-			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICE:
-				setActuatordevice((ActuatorDevice)null);
+			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE:
+				setActuatordevicetype((ActuatorDeviceType)null);
 				return;
 			case HalPackage.CONTROL_COMMAND__ACTIVITYLOG:
 				setActivitylog((ActivityLog)null);
@@ -479,8 +479,8 @@ public class ControlCommandImpl extends MinimalEObjectImpl.Container implements 
 				return COMMAND_ID_EDEFAULT == null ? commandId != null : !COMMAND_ID_EDEFAULT.equals(commandId);
 			case HalPackage.CONTROL_COMMAND__CONTROL_TIMESTAMP:
 				return CONTROL_TIMESTAMP_EDEFAULT == null ? controlTimestamp != null : !CONTROL_TIMESTAMP_EDEFAULT.equals(controlTimestamp);
-			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICE:
-				return actuatordevice != null;
+			case HalPackage.CONTROL_COMMAND__ACTUATORDEVICETYPE:
+				return actuatordevicetype != null;
 			case HalPackage.CONTROL_COMMAND__ACTIVITYLOG:
 				return activitylog != null;
 			case HalPackage.CONTROL_COMMAND__ACTION:

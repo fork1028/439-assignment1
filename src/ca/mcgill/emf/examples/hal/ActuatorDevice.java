@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getActuatordevicetype <em>Actuatordevicetype</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getRoom <em>Room</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getControlcommand <em>Controlcommand</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getActuatorDevice()
@@ -93,29 +92,5 @@ public interface ActuatorDevice extends EObject {
 	 * @generated
 	 */
 	void setRoom(Room value);
-
-	/**
-	 * Returns the value of the '<em><b>Controlcommand</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevice <em>Actuatordevice</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controlcommand</em>' reference.
-	 * @see #setControlcommand(ControlCommand)
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getActuatorDevice_Controlcommand()
-	 * @see ca.mcgill.emf.examples.hal.ControlCommand#getActuatordevice
-	 * @model opposite="actuatordevice"
-	 * @generated
-	 */
-	ControlCommand getControlcommand();
-
-	/**
-	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.ActuatorDevice#getControlcommand <em>Controlcommand</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Controlcommand</em>' reference.
-	 * @see #getControlcommand()
-	 * @generated
-	 */
-	void setControlcommand(ControlCommand value);
 
 } // ActuatorDevice

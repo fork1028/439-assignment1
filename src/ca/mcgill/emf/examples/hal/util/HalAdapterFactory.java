@@ -112,8 +112,8 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 				return createActuatorDeviceTypeAdapter();
 			}
 			@Override
-			public Adapter caseLogicBool(LogicBool object) {
-				return createLogicBoolAdapter();
+			public Adapter caseLeaf(Leaf object) {
+				return createLeafAdapter();
 			}
 			@Override
 			public Adapter casePreconditionComposite(PreconditionComposite object) {
@@ -122,6 +122,10 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSmartHome(SmartHome object) {
 				return createSmartHomeAdapter();
+			}
+			@Override
+			public Adapter caseDeviceType(DeviceType object) {
+				return createDeviceTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -298,16 +302,16 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.LogicBool <em>Logic Bool</em>}'.
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Leaf <em>Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ca.mcgill.emf.examples.hal.LogicBool
+	 * @see ca.mcgill.emf.examples.hal.Leaf
 	 * @generated
 	 */
-	public Adapter createLogicBoolAdapter() {
+	public Adapter createLeafAdapter() {
 		return null;
 	}
 
@@ -336,6 +340,20 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSmartHomeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.DeviceType <em>Device Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.DeviceType
+	 * @generated
+	 */
+	public Adapter createDeviceTypeAdapter() {
 		return null;
 	}
 
