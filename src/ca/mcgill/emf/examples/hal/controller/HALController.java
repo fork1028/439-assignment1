@@ -78,16 +78,14 @@ public class HALController {
 			// remove all sensors of the room
 			for (SensorDevice sd : smartHome.getSensordevice()) {
 				if (sd.getRoom().equals(r)) {
-					sd.setRoom(null);
-					sd.setPrecondition(null);
+					// sd.setPrecondition(null);
 					// delete the sensor
 					String sensorName = sd.getDeviceName();
 					deleteSensor(sensorName);
 					// delete the sensor's sensor readings
-					SensorReading sensorReading = sd.getSensorreading();
-					ActivityLog activityLog = sensorReading.getActivitylog();
-					activityLog.getSensorreading().remove(sensorReading);
-					HALApplication.save();			
+//					SensorReading sensorReading = sd.getSensorreading();
+//					ActivityLog activityLog = sensorReading.getActivitylog();
+//					activityLog.getSensorreading().remove(sensorReading);		
 				}
 			}
 			// remove the room
@@ -143,16 +141,17 @@ public class HALController {
 	 * @param sensorDeviceType
 	 * @return
 	 */
-	public static String addSensor(String roomName, String sensorDeviceName, SensorDeviceType sensorDeviceType) {
+	public static String addSensor(String roomName, String sensorDeviceName, String sensorDeviceTypeName) {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
 		}
-		if (existsSensorDeviceType(sensorDeviceType, roomName)) {
-			return "Sensor device with type " + sensorDeviceType + " already exists";
-		}
+//		if (existsSensorDeviceType(sensorDeviceTypeName, roomName)) {
+//			return "Sensor device with type " + sensorDeviceTypeName + " already exists";
+//		}
 		SmartHome smartHome = HALApplication.getSmartHome();
 		SensorDevice sd = HalFactory.eINSTANCE.createSensorDevice();
 		sd.setDeviceName(sensorDeviceName);
+		sd.setSensordevicetype((SensorDeviceType)getDeviceType(sensorDeviceTypeName));
 		Room r = findRoom(roomName);
 		r.getSensordevice().add(sd);
 		smartHome.getSensordevice().add(sd);
@@ -176,7 +175,6 @@ public class HALController {
 		return null;
 	}
 	
-	
 	// actuator
 	
 	/**
@@ -190,9 +188,9 @@ public class HALController {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
 		}
-		if (existsActuatorDeviceType(actuatorDeviceType, roomName)) {
-			return "Actuator device with type " + actuatorDeviceType + " already exists";
-		}
+//		if (existsActuatorDeviceType(actuatorDeviceType, roomName)) {
+//			return "Actuator device with type " + actuatorDeviceType + " already exists";
+//		}
 		SmartHome smartHome = HALApplication.getSmartHome();
 		ActuatorDevice ad = HalFactory.eINSTANCE.createActuatorDevice();
 		ad.setDeviceName(actuatorDeviceName);
@@ -270,22 +268,51 @@ public class HALController {
 		}
 		return null;
 	}
-
-	/**
-	 * 
-	 * @param sensorDeviceType
-	 * @param roomName
-	 * @return Boolean
-	 */
-	private static Boolean existsSensorDeviceType(SensorDeviceType sensorDeviceType, String roomName) {
-		Room r = findRoom(roomName);
-		for (SensorDevice sd : r.getSensordevice()) {
-			if (sd.getSensordevicetype() == sensorDeviceType) {
-				return true;
+	
+	public static String getSensorDeviceTypeName(String sensorDeviceName) {
+		SmartHome smartHome = HALApplication.getSmartHome();
+		for (SensorDevice sd : smartHome.getSensordevice()) {
+			if (sd.getDeviceName().equals(sensorDeviceName)) {
+				return sd.getSensordevicetype().getTypeName();
 			}
 		}
-		return false;
+		return null;
 	}
+	
+	private static DeviceType getDeviceType(String deviceTypeName) {
+		SmartHome smartHome = HALApplication.getSmartHome();
+		for (DeviceType type : smartHome.getDevicetype()) {
+			if (type.getTypeName().equals(deviceTypeName)) {
+				return type;
+			}
+		}
+		return null;
+	}
+	
+	public static List<String> getAllDeviceTypes() {
+		ArrayList<String> deviceTypeNames = new ArrayList<String>();
+		SmartHome smartHome = HALApplication.getSmartHome();
+		for (DeviceType type : smartHome.getDevicetype()) {
+			deviceTypeNames.add(type.getTypeName());
+		}
+		return deviceTypeNames;
+	}
+	
+//	/**
+//	 * 
+//	 * @param sensorDeviceType
+//	 * @param roomName
+//	 * @return Boolean
+//	 */
+//	private static Boolean existsSensorDeviceType(String sensorDeviceTypeName, String roomName) {
+//		Room r = findRoom(roomName);
+//		for (SensorDevice sd : r.getSensordevice()) {
+//			if (sd.getSensordevicetype().toString().equals(sensorDeviceTypeName)) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 	
 	// actuator
 	
@@ -304,21 +331,21 @@ public class HALController {
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param actuatorDeviceType
-	 * @param roomName
-	 * @return Boolean
-	 */
-	private static Boolean existsActuatorDeviceType(ActuatorDeviceType actuatorDeviceType, String roomName) {
-		Room r = findRoom(roomName);
-		for (ActuatorDevice ad : r.getActuatordevice()) {
-			if (ad.getActuatordevicetype() == actuatorDeviceType) {
-				return true;
-			}
-		}
-		return false;
-	}
+//	/**
+//	 * 
+//	 * @param actuatorDeviceType
+//	 * @param roomName
+//	 * @return Boolean
+//	 */
+//	private static Boolean existsActuatorDeviceType(ActuatorDeviceType actuatorDeviceType, String roomName) {
+//		Room r = findRoom(roomName);
+//		for (ActuatorDevice ad : r.getActuatordevice()) {
+//			if (ad.getActuatordevicetype() == actuatorDeviceType) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 	
 
 }

@@ -82,9 +82,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HAL.ecore#//SmartHome/homeName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HAL.ecore#//SmartHome/sensordevice"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HAL.ecore#//SmartHome/actuatordevice"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//SmartHome/devicetype"/>
     </genClasses>
     <genClasses ecoreClass="HAL.ecore#//DeviceType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HAL.ecore#//DeviceType/typeName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//DeviceType/smarthome"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

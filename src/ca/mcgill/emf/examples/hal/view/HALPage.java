@@ -59,7 +59,7 @@ public class HALPage extends JFrame {
 	private String error = null;
 	// room's sensor devices
 	private DefaultTableModel sensorDevicesDtm;
-	private String sensorDevicesColumnNames[] = { "Sensor Device" };
+	private String sensorDevicesColumnNames[] = { "Sensor Device", "Sensor Device Type" };
 	private static final int HEIGHT_SENSOR_DEVICES_TABLE = 100;
 
 	public HALPage() {
@@ -86,6 +86,7 @@ public class HALPage extends JFrame {
 		initializeButton(updateRoomButton, "Update", this::updateRoomButtonActionPerformed);
 
 		// elements for room's sensor devices
+		
 		removeSensorDeviceLabel.setText("Select a row in the table and hit the delete key to remove a sensor device");
 		this.add(sensorDevicesScrollPane);
 		Dimension d = sensorDevicesTable.getPreferredSize();
@@ -127,7 +128,7 @@ public class HALPage extends JFrame {
 						.addComponent(updateRoomButton))
 				.addComponent(removeSensorDeviceLabel).addComponent(sensorDevicesScrollPane)
 				.addGroup(layout.createSequentialGroup().addComponent(newSensorDeviceNameLabel)
-						.addComponent(newSensorDeviceNameTextField, 200, 200, 400).addComponent(addSensorDeviceButton))));
+						.addComponent(newSensorDeviceNameTextField, 100, 100, 200).addComponent(sensorDeviceTypeList).addComponent(addSensorDeviceButton))));
 
 		layout.setVerticalGroup(layout.createParallelGroup()
 				.addGroup(layout.createSequentialGroup().addComponent(errorMessage)
@@ -140,7 +141,7 @@ public class HALPage extends JFrame {
 								.addComponent(updateRoomButton))
 						.addComponent(removeSensorDeviceLabel).addComponent(sensorDevicesScrollPane)
 						.addGroup(layout.createParallelGroup().addComponent(newSensorDeviceNameLabel)
-								.addComponent(newSensorDeviceNameTextField).addComponent(addSensorDeviceButton))));
+								.addComponent(newSensorDeviceNameTextField).addComponent(sensorDeviceTypeList).addComponent(addSensorDeviceButton))));
 
 		pack();
 	}
@@ -167,8 +168,11 @@ public class HALPage extends JFrame {
 					foundIndex = index;
 				}
 				index++;
-			}
-			;
+			};
+			// populate sensor device types list
+			for (String typeName : HALController.getAllDeviceTypes()) {
+				sensorDeviceTypeList.addItem(typeName);
+			};
 			// enable rooms list UI elements only if at least one group exist
 			roomsList.setEnabled(index > 0);
 			roomsList.setSelectedIndex(foundIndex);
@@ -250,7 +254,7 @@ public class HALPage extends JFrame {
 	}
 
 	private void addSensorDeviceButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		error = HALController.addSensor(roomNameText.getText(), newSensorDeviceNameTextField.getText());
+		error = HALController.addSensor(roomNameText.getText(), newSensorDeviceNameTextField.getText(), (String)sensorDeviceTypeList.getSelectedItem());
 		refreshData(roomNameText.getText());
 	}
 
@@ -281,7 +285,7 @@ public class HALPage extends JFrame {
 		sensorDevicesTable.setModel(sensorDevicesDtm);
 		if (foundRoom != null) {
 			for (String sensorDeviceName : foundRoom.getSensorDeviceNames()) {
-				Object[] obj = { sensorDeviceName };
+				Object[] obj = { sensorDeviceName, HALController.getSensorDeviceTypeName(sensorDeviceName) };
 				sensorDevicesDtm.addRow(obj);
 			}
 		}

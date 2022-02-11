@@ -626,13 +626,22 @@ public interface HalPackage extends EPackage {
 	int DEVICE_TYPE__TYPE_NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Smarthome</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_TYPE__SMARTHOME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Device Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_TYPE_FEATURE_COUNT = 1;
+	int DEVICE_TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Device Type</em>' class.
@@ -661,6 +670,15 @@ public interface HalPackage extends EPackage {
 	 * @ordered
 	 */
 	int SENSOR_DEVICE_TYPE__TYPE_NAME = DEVICE_TYPE__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Smarthome</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DEVICE_TYPE__SMARTHOME = DEVICE_TYPE__SMARTHOME;
 
 	/**
 	 * The feature id for the '<em><b>Sensordevice</b></em>' reference list.
@@ -707,6 +725,15 @@ public interface HalPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTUATOR_DEVICE_TYPE__TYPE_NAME = DEVICE_TYPE__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Smarthome</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTUATOR_DEVICE_TYPE__SMARTHOME = DEVICE_TYPE__SMARTHOME;
 
 	/**
 	 * The feature id for the '<em><b>Actuatordevice</b></em>' reference list.
@@ -928,13 +955,22 @@ public interface HalPackage extends EPackage {
 	int SMART_HOME__ACTUATORDEVICE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Devicetype</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_HOME__DEVICETYPE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Smart Home</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_HOME_FEATURE_COUNT = 4;
+	int SMART_HOME_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Smart Home</em>' class.
@@ -1570,6 +1606,17 @@ public interface HalPackage extends EPackage {
 	EReference getSmartHome_Actuatordevice();
 
 	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.SmartHome#getDevicetype <em>Devicetype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Devicetype</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SmartHome#getDevicetype()
+	 * @see #getSmartHome()
+	 * @generated
+	 */
+	EReference getSmartHome_Devicetype();
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.DeviceType <em>Device Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1589,6 +1636,17 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDeviceType_TypeName();
+
+	/**
+	 * Returns the meta object for the reference '{@link ca.mcgill.emf.examples.hal.DeviceType#getSmarthome <em>Smarthome</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Smarthome</em>'.
+	 * @see ca.mcgill.emf.examples.hal.DeviceType#getSmarthome()
+	 * @see #getDeviceType()
+	 * @generated
+	 */
+	EReference getDeviceType_Smarthome();
 
 	/**
 	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.Logic <em>Logic</em>}'.
@@ -2108,6 +2166,14 @@ public interface HalPackage extends EPackage {
 		EReference SMART_HOME__ACTUATORDEVICE = eINSTANCE.getSmartHome_Actuatordevice();
 
 		/**
+		 * The meta object literal for the '<em><b>Devicetype</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SMART_HOME__DEVICETYPE = eINSTANCE.getSmartHome_Devicetype();
+
+		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.DeviceTypeImpl <em>Device Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2124,6 +2190,14 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEVICE_TYPE__TYPE_NAME = eINSTANCE.getDeviceType_TypeName();
+
+		/**
+		 * The meta object literal for the '<em><b>Smarthome</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_TYPE__SMARTHOME = eINSTANCE.getDeviceType_Smarthome();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.Logic <em>Logic</em>}' enum.

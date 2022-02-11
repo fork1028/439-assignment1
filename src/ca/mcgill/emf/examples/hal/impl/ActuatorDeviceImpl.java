@@ -5,8 +5,8 @@ package ca.mcgill.emf.examples.hal.impl;
 import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
 import ca.mcgill.emf.examples.hal.HalPackage;
-
 import ca.mcgill.emf.examples.hal.Room;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

@@ -6,7 +6,6 @@ import ca.mcgill.emf.examples.hal.ActuatorDevice;
 import ca.mcgill.emf.examples.hal.ActuatorDeviceType;
 import ca.mcgill.emf.examples.hal.ControlCommand;
 import ca.mcgill.emf.examples.hal.HalPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

@@ -727,6 +727,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSmartHome_Devicetype() {
+		return (EReference)smartHomeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDeviceType() {
 		return deviceTypeEClass;
 	}
@@ -738,6 +747,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 */
 	public EAttribute getDeviceType_TypeName() {
 		return (EAttribute)deviceTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeviceType_Smarthome() {
+		return (EReference)deviceTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -847,9 +865,11 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		createEAttribute(smartHomeEClass, SMART_HOME__HOME_NAME);
 		createEReference(smartHomeEClass, SMART_HOME__SENSORDEVICE);
 		createEReference(smartHomeEClass, SMART_HOME__ACTUATORDEVICE);
+		createEReference(smartHomeEClass, SMART_HOME__DEVICETYPE);
 
 		deviceTypeEClass = createEClass(DEVICE_TYPE);
 		createEAttribute(deviceTypeEClass, DEVICE_TYPE__TYPE_NAME);
+		createEReference(deviceTypeEClass, DEVICE_TYPE__SMARTHOME);
 
 		// Create enums
 		logicEEnum = createEEnum(LOGIC);
@@ -959,9 +979,11 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEAttribute(getSmartHome_HomeName(), ecorePackage.getEString(), "homeName", null, 0, 1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartHome_Sensordevice(), this.getSensorDevice(), null, "sensordevice", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartHome_Actuatordevice(), this.getActuatorDevice(), null, "actuatordevice", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSmartHome_Devicetype(), this.getDeviceType(), this.getDeviceType_Smarthome(), "devicetype", null, 0, -1, SmartHome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceTypeEClass, DeviceType.class, "DeviceType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeviceType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceType_Smarthome(), this.getSmartHome(), this.getSmartHome_Devicetype(), "smarthome", null, 1, 1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(logicEEnum, Logic.class, "Logic");

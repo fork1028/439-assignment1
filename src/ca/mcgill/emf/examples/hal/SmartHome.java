@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getHomeName <em>Home Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getSensordevice <em>Sensordevice</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getActuatordevice <em>Actuatordevice</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.SmartHome#getDevicetype <em>Devicetype</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getSmartHome()
@@ -83,5 +84,19 @@ public interface SmartHome extends EObject {
 	 * @generated
 	 */
 	EList<ActuatorDevice> getActuatordevice();
+
+	/**
+	 * Returns the value of the '<em><b>Devicetype</b></em>' reference list.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.DeviceType}.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.DeviceType#getSmarthome <em>Smarthome</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Devicetype</em>' reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSmartHome_Devicetype()
+	 * @see ca.mcgill.emf.examples.hal.DeviceType#getSmarthome
+	 * @model opposite="smarthome"
+	 * @generated
+	 */
+	EList<DeviceType> getDevicetype();
 
 } // SmartHome

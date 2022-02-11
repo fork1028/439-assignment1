@@ -5,7 +5,7 @@
     <semanticResources>HAL.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_8Dye4IUIEeyFpuUBAN8AwQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zOgwUIYFEeyFpuUBAN8AwQ" name="hal class diagram" repPath="#_zObQwIYFEeyFpuUBAN8AwQ" changeId="b7a5002a-e7d8-48f4-a084-412bb5a8a181">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zOgwUIYFEeyFpuUBAN8AwQ" name="hal class diagram" repPath="#_zObQwIYFEeyFpuUBAN8AwQ" changeId="cc9022fd-bf70-497f-8c4e-96524d940de1">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="HAL.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -241,7 +241,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_OZtA5onYEeyFpuUBAN8AwQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_OZtA4YnYEeyFpuUBAN8AwQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OZtA4onYEeyFpuUBAN8AwQ" x="261" y="981" width="120" height="100"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OZtA4onYEeyFpuUBAN8AwQ" x="261" y="990" width="120" height="100"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_zOjMkoYFEeyFpuUBAN8AwQ"/>
         <edges xmi:type="notation:Edge" xmi:id="_2OvnIIYFEeyFpuUBAN8AwQ" type="4001" element="_2Oa3AIYFEeyFpuUBAN8AwQ" source="_2Oo5cIYFEeyFpuUBAN8AwQ" target="_2OqHkIYFEeyFpuUBAN8AwQ">
@@ -563,6 +563,22 @@
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oyhd44t8EeyFpuUBAN8AwQ" points="[0, 0, -173, -72]$[173, 72, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oyjTEIt8EeyFpuUBAN8AwQ" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oyjTEYt8EeyFpuUBAN8AwQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_R80JEIuKEeyFpuUBAN8AwQ" type="4001" element="_R8uphouKEeyFpuUBAN8AwQ" source="_5Q_2MIYQEeyFpuUBAN8AwQ" target="_OZtA4InYEeyFpuUBAN8AwQ">
+          <children xmi:type="notation:Node" xmi:id="_R80JFIuKEeyFpuUBAN8AwQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R80JFYuKEeyFpuUBAN8AwQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_R80JFouKEeyFpuUBAN8AwQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R80JF4uKEeyFpuUBAN8AwQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_R80JGIuKEeyFpuUBAN8AwQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R80JGYuKEeyFpuUBAN8AwQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_R80JEYuKEeyFpuUBAN8AwQ" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_R80JEouKEeyFpuUBAN8AwQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_R80JE4uKEeyFpuUBAN8AwQ" points="[0, 0, 0, -109]$[0, 109, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_R80JGouKEeyFpuUBAN8AwQ" id="(0.576271186440678,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_R80JG4uKEeyFpuUBAN8AwQ" id="(0.576271186440678,0.0)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>
@@ -1046,7 +1062,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_5Q2FMIYQEeyFpuUBAN8AwQ" name="SmartHome" tooltipText="" outgoingEdges="_Bn7E5oYREeyFpuUBAN8AwQ _g8ah6YYZEeyFpuUBAN8AwQ _hoN384YZEeyFpuUBAN8AwQ" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_5Q2FMIYQEeyFpuUBAN8AwQ" name="SmartHome" tooltipText="" outgoingEdges="_Bn7E5oYREeyFpuUBAN8AwQ _g8ah6YYZEeyFpuUBAN8AwQ _hoN384YZEeyFpuUBAN8AwQ _R8uphouKEeyFpuUBAN8AwQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="HAL.ecore#//SmartHome"/>
       <semanticElements xmi:type="ecore:EClass" href="HAL.ecore#//SmartHome"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1104,7 +1120,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OZjP4InYEeyFpuUBAN8AwQ" name="DeviceType" tooltipText="" incomingEdges="_n9F7mYnYEeyFpuUBAN8AwQ _o7HqIonYEeyFpuUBAN8AwQ" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_OZjP4InYEeyFpuUBAN8AwQ" name="DeviceType" tooltipText="" incomingEdges="_n9F7mYnYEeyFpuUBAN8AwQ _o7HqIonYEeyFpuUBAN8AwQ _R8uphouKEeyFpuUBAN8AwQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="HAL.ecore#//DeviceType"/>
       <semanticElements xmi:type="ecore:EClass" href="HAL.ecore#//DeviceType"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1170,6 +1186,17 @@
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_oyZiJIt8EeyFpuUBAN8AwQ" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_oyZiJYt8EeyFpuUBAN8AwQ" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_R8uphouKEeyFpuUBAN8AwQ" sourceNode="_5Q2FMIYQEeyFpuUBAN8AwQ" targetNode="_OZjP4InYEeyFpuUBAN8AwQ" beginLabel="[1..1] smarthome" endLabel="[0..*] devicetype">
+      <target xmi:type="ecore:EReference" href="HAL.ecore#//SmartHome/devicetype"/>
+      <semanticElements xmi:type="ecore:EReference" href="HAL.ecore#//SmartHome/devicetype"/>
+      <semanticElements xmi:type="ecore:EReference" href="HAL.ecore#//DeviceType/smarthome"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_R8uph4uKEeyFpuUBAN8AwQ" sourceArrow="InputArrow" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_R8upiIuKEeyFpuUBAN8AwQ" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_R8upiYuKEeyFpuUBAN8AwQ" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
