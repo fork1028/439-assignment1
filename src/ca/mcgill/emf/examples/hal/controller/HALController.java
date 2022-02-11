@@ -8,6 +8,12 @@ import ca.mcgill.emf.examples.hal.application.HALApplication;
 
 public class HALController {
 	
+	/**
+	 * 
+	 * @param String roomName
+	 * @return null
+	 */
+	
 	public static String addRoom(String roomName) {
 		if (isNameValid(roomName)) {
 			return "Room name must be specified";
@@ -22,6 +28,13 @@ public class HALController {
 		HALApplication.save();
 		return null;
 	}
+	
+	/**
+	 * 
+	 * @param String oldRoomName
+	 * @param String newRoomName
+	 * @return null
+	 */
 	
 	public static String updateRoom(String oldRoomName, String newRoomName) {
 		if (!isRoomExisted(oldRoomName)) {
@@ -41,6 +54,12 @@ public class HALController {
 		HALApplication.save();
 		return null;
 	}
+	
+	/**
+	 * 
+	 * @param String roomName
+	 * @return null
+	 */
 	
 	public static String deleteRoom(String roomName) {
 		Room r = findRoom(roomName);
@@ -62,9 +81,13 @@ public class HALController {
 					sd.setRoom(null);
 					sd.setPrecondition(null);
 					// delete the sensor
-					// delete the actuator
 					String sensorName = sd.getDeviceName();
-					deleteActuator(sensorName);
+					deleteSensor(sensorName);
+					// delete the sensor's sensor readings
+					SensorReading sensorReading = sd.getSensorreading();
+					ActivityLog activityLog = sensorReading.getActivitylog();
+					activityLog.getSensorreading().remove(sensorReading);
+					HALApplication.save();			
 				}
 			}
 			// remove the room
@@ -74,7 +97,11 @@ public class HALController {
 		return null;
 	}
 	
-	// query methods
+	/**
+	 * 
+	 * @param String roomName
+	 * @return
+	 */
 	
 	public static TORoom getRoom(String roomName) {
 		TORoom result = null;
@@ -92,6 +119,11 @@ public class HALController {
 		}
 		return result;
 	}
+	
+	/**
+	 * 
+	 * @return list<String>
+	 */
 
 	public static List<String> getRooms() {
 		ArrayList<String> roomNames = new ArrayList<String>();
@@ -144,6 +176,7 @@ public class HALController {
 		return null;
 	}
 	
+	
 	// actuator
 	
 	/**
@@ -172,8 +205,7 @@ public class HALController {
 
 	/**
 	 * 
-	 * @param actuatorDeviceName
-	 * @return
+	 * @param String actuatorDeviceName
 	 */
 	public static String deleteActuator(String actuatorDeviceName) {
 		ActuatorDevice ad = findActuatorDevice(actuatorDeviceName);
@@ -186,15 +218,31 @@ public class HALController {
 		return null;
 	}
 
-	// helper methods
+	/**
+	 * 
+	 * @param String s
+	 * @return Boolean
+	 */
 
 	private static boolean isNameValid(String s) {
 		return s == null || s.length() == 0;
 	}
+	
+	/**
+	 * 
+	 * @param String roomName
+	 * @return Boolean
+	 */
 
 	private static boolean isRoomExisted(String roomName) {
 		return findRoom(roomName) != null;
 	}
+	
+	/**
+	 * 
+	 * @param roomName
+	 * @return Room
+	 */
 
 	private static Room findRoom(String roomName) {
 		SmartHome smarthome = HALApplication.getSmartHome();
@@ -211,7 +259,7 @@ public class HALController {
 	/**
 	 * 
 	 * @param sensorDeviceName
-	 * @return
+	 * @return SensorDevice
 	 */
 	private static SensorDevice findSensorDevice(String sensorDeviceName) {
 		SmartHome smartHome = HALApplication.getSmartHome();
@@ -227,7 +275,7 @@ public class HALController {
 	 * 
 	 * @param sensorDeviceType
 	 * @param roomName
-	 * @return
+	 * @return Boolean
 	 */
 	private static Boolean existsSensorDeviceType(SensorDeviceType sensorDeviceType, String roomName) {
 		Room r = findRoom(roomName);
@@ -244,7 +292,7 @@ public class HALController {
 	/**
 	 * 
 	 * @param actuatorDeviceName
-	 * @return
+	 * @return ActuatorDevice
 	 */
 	private static ActuatorDevice findActuatorDevice(String actuatorDeviceName) {
 		SmartHome smartHome = HALApplication.getSmartHome();
@@ -260,7 +308,7 @@ public class HALController {
 	 * 
 	 * @param actuatorDeviceType
 	 * @param roomName
-	 * @return
+	 * @return Boolean
 	 */
 	private static Boolean existsActuatorDeviceType(ActuatorDeviceType actuatorDeviceType, String roomName) {
 		Room r = findRoom(roomName);
