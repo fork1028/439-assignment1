@@ -60,7 +60,7 @@ public class HALPage extends JFrame {
 	// room's sensor devices
 	private DefaultTableModel sensorDevicesDtm;
 	private String sensorDevicesColumnNames[] = { "Sensor Device" };
-	private static final int HEIGHT_TEAMS_TABLE = 100;
+	private static final int HEIGHT_SENSOR_DEVICES_TABLE = 100;
 
 	public HALPage() {
 		initComponents();
@@ -85,24 +85,24 @@ public class HALPage extends JFrame {
 		initializeButton(addRoomButton, "Add", this::addRoomButtonActionPerformed);
 		initializeButton(updateRoomButton, "Update", this::updateRoomButtonActionPerformed);
 
-//		// elements for group's teams
-//		removeTeamLabel.setText("Select a row in the table and hit the delete key to remove a team");
-//		this.add(teamsScrollPane);
-//		Dimension d = teamsTable.getPreferredSize();
-//		teamsScrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
-//		teamsScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-//		teamsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//		// enable delete key in table to remove a row (team)
-//		InputMap inputMap = teamsTable.getInputMap(JComponent.WHEN_FOCUSED);
-//		ActionMap actionMap = teamsTable.getActionMap();
-//		inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), "delete");
-//		actionMap.put("delete", new AbstractAction() {
-//			public void actionPerformed(ActionEvent deleteEvent) {
-//				teamsTableDeleteKeyActionPerformed(deleteEvent);
-//			}
-//		});
-//		newTeamNameLabel.setText("New Team Name:");
-//		initializeButton(addTeamButton, "Add Team", this::addTeamButtonActionPerformed);
+		// elements for room's sensor devices
+		removeSensorDeviceLabel.setText("Select a row in the table and hit the delete key to remove a sensor device");
+		this.add(sensorDevicesScrollPane);
+		Dimension d = sensorDevicesTable.getPreferredSize();
+		sensorDevicesScrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_SENSOR_DEVICES_TABLE));
+		sensorDevicesScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		sensorDevicesTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		// enable delete key in table to remove a row (sensor device)
+		InputMap inputMap = sensorDevicesTable.getInputMap(JComponent.WHEN_FOCUSED);
+		ActionMap actionMap = sensorDevicesTable.getActionMap();
+		inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), "delete");
+		actionMap.put("delete", new AbstractAction() {
+			public void actionPerformed(ActionEvent deleteEvent) {
+				sensorDevicesTableDeleteKeyActionPerformed(deleteEvent);
+			}
+		});
+		newSensorDeviceNameLabel.setText("New Sensor Device Name:");
+		initializeButton(addSensorDeviceButton, "Add Sensor Device", this::addSensorDeviceButtonActionPerformed);
 
 		// global settings and listeners
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -204,7 +204,7 @@ public class HALPage extends JFrame {
 				addSensorDeviceButton.setEnabled(true);
 			}
 			Dimension d = sensorDevicesTable.getPreferredSize();
-			sensorDevicesScrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
+			sensorDevicesScrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_SENSOR_DEVICES_TABLE));
 		}
 
 		// this is needed because the size of the window changes depending on whether an
@@ -249,10 +249,10 @@ public class HALPage extends JFrame {
 		refreshData(newRoomNameTextField.getText());
 	}
 
-//	private void addSensorDeviceButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		error = HALController.addSensor(roomNameText.getText(), newSensorDeviceNameTextField.getText());
-//		refreshData(roomNameText.getText());
-//	}
+	private void addSensorDeviceButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		error = HALController.addSensor(roomNameText.getText(), newSensorDeviceNameTextField.getText());
+		refreshData(roomNameText.getText());
+	}
 
 	private void sensorDevicesTableDeleteKeyActionPerformed(java.awt.event.ActionEvent evt) {
 		if (sensorDevicesTable.getSelectedRow() != -1) {
