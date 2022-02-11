@@ -45,7 +45,7 @@ public class HALApplication {
 		SmartHome smartHome;
 		SensorDeviceType temperatureSensor;
 		SensorDeviceType movementSensor;
-		SensorDeviceType LightSensor;
+		SensorDeviceType lightSensor;
 		ActuatorDeviceType heater;
 		ActuatorDeviceType lock;
 		ActuatorDeviceType lightSwitch;
@@ -58,12 +58,18 @@ public class HALApplication {
 			smartHome.setHomeName("My Smart Home");
 			// create sensors
 			temperatureSensor = HalFactory.eINSTANCE.createSensorDeviceType();
+			temperatureSensor.setTypeName("Temperature Sensor");
 			movementSensor = HalFactory.eINSTANCE.createSensorDeviceType();
-			LightSensor = HalFactory.eINSTANCE.createSensorDeviceType();
+			movementSensor.setTypeName("Movement Sensor");
+			lightSensor = HalFactory.eINSTANCE.createSensorDeviceType();
+			lightSensor.setTypeName("Light Sensor");
 			// create actuators
 			heater = HalFactory.eINSTANCE.createActuatorDeviceType();
+			heater.setTypeName("Heater");
 			lock = HalFactory.eINSTANCE.createActuatorDeviceType();
+			lock.setTypeName("Lock");
 			lightSwitch = HalFactory.eINSTANCE.createActuatorDeviceType();
+			lightSwitch.setTypeName("Light Switch");
 		}
 		return smartHome;
 	}
