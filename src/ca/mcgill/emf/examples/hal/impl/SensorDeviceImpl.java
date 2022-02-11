@@ -28,9 +28,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.SensorDeviceImpl#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.SensorDeviceImpl#getSensordevicetype <em>Sensordevicetype</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.SensorDeviceImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.SensorDeviceImpl#getSensorreading <em>Sensorreading</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.SensorDeviceImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.SensorDeviceImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,16 +67,6 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 	protected SensorDeviceType sensordevicetype;
 
 	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoom()
-	 * @generated
-	 * @ordered
-	 */
-	protected Room room;
-
-	/**
 	 * The cached value of the '{@link #getSensorreading() <em>Sensorreading</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,6 +85,16 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 	 * @ordered
 	 */
 	protected Precondition precondition;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Room room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,66 +194,6 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.SENSOR_DEVICE__SENSORDEVICETYPE, newSensordevicetype, newSensordevicetype));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room getRoom() {
-		if (room != null && room.eIsProxy()) {
-			InternalEObject oldRoom = (InternalEObject)room;
-			room = (Room)eResolveProxy(oldRoom);
-			if (room != oldRoom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.SENSOR_DEVICE__ROOM, oldRoom, room));
-			}
-		}
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room basicGetRoom() {
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRoom(Room newRoom, NotificationChain msgs) {
-		Room oldRoom = room;
-		room = newRoom;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.SENSOR_DEVICE__ROOM, oldRoom, newRoom);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoom(Room newRoom) {
-		if (newRoom != room) {
-			NotificationChain msgs = null;
-			if (room != null)
-				msgs = ((InternalEObject)room).eInverseRemove(this, HalPackage.ROOM__SENSORDEVICE, Room.class, msgs);
-			if (newRoom != null)
-				msgs = ((InternalEObject)newRoom).eInverseAdd(this, HalPackage.ROOM__SENSORDEVICE, Room.class, msgs);
-			msgs = basicSetRoom(newRoom, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.SENSOR_DEVICE__ROOM, newRoom, newRoom));
 	}
 
 	/**
@@ -381,6 +321,66 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Room getRoom() {
+		if (room != null && room.eIsProxy()) {
+			InternalEObject oldRoom = (InternalEObject)room;
+			room = (Room)eResolveProxy(oldRoom);
+			if (room != oldRoom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HalPackage.SENSOR_DEVICE__ROOM, oldRoom, room));
+			}
+		}
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room basicGetRoom() {
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRoom(Room newRoom, NotificationChain msgs) {
+		Room oldRoom = room;
+		room = newRoom;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.SENSOR_DEVICE__ROOM, oldRoom, newRoom);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoom(Room newRoom) {
+		if (newRoom != room) {
+			NotificationChain msgs = null;
+			if (room != null)
+				msgs = ((InternalEObject)room).eInverseRemove(this, HalPackage.ROOM__SENSORDEVICE, Room.class, msgs);
+			if (newRoom != null)
+				msgs = ((InternalEObject)newRoom).eInverseAdd(this, HalPackage.ROOM__SENSORDEVICE, Room.class, msgs);
+			msgs = basicSetRoom(newRoom, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.SENSOR_DEVICE__ROOM, newRoom, newRoom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -388,10 +388,6 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 				if (sensordevicetype != null)
 					msgs = ((InternalEObject)sensordevicetype).eInverseRemove(this, HalPackage.SENSOR_DEVICE_TYPE__SENSORDEVICE, SensorDeviceType.class, msgs);
 				return basicSetSensordevicetype((SensorDeviceType)otherEnd, msgs);
-			case HalPackage.SENSOR_DEVICE__ROOM:
-				if (room != null)
-					msgs = ((InternalEObject)room).eInverseRemove(this, HalPackage.ROOM__SENSORDEVICE, Room.class, msgs);
-				return basicSetRoom((Room)otherEnd, msgs);
 			case HalPackage.SENSOR_DEVICE__SENSORREADING:
 				if (sensorreading != null)
 					msgs = ((InternalEObject)sensorreading).eInverseRemove(this, HalPackage.SENSOR_READING__SENSORDEVICE, SensorReading.class, msgs);
@@ -400,6 +396,10 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 				if (precondition != null)
 					msgs = ((InternalEObject)precondition).eInverseRemove(this, HalPackage.PRECONDITION__SENSORDEVICE, Precondition.class, msgs);
 				return basicSetPrecondition((Precondition)otherEnd, msgs);
+			case HalPackage.SENSOR_DEVICE__ROOM:
+				if (room != null)
+					msgs = ((InternalEObject)room).eInverseRemove(this, HalPackage.ROOM__SENSORDEVICE, Room.class, msgs);
+				return basicSetRoom((Room)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -414,12 +414,12 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 		switch (featureID) {
 			case HalPackage.SENSOR_DEVICE__SENSORDEVICETYPE:
 				return basicSetSensordevicetype(null, msgs);
-			case HalPackage.SENSOR_DEVICE__ROOM:
-				return basicSetRoom(null, msgs);
 			case HalPackage.SENSOR_DEVICE__SENSORREADING:
 				return basicSetSensorreading(null, msgs);
 			case HalPackage.SENSOR_DEVICE__PRECONDITION:
 				return basicSetPrecondition(null, msgs);
+			case HalPackage.SENSOR_DEVICE__ROOM:
+				return basicSetRoom(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -437,15 +437,15 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 			case HalPackage.SENSOR_DEVICE__SENSORDEVICETYPE:
 				if (resolve) return getSensordevicetype();
 				return basicGetSensordevicetype();
-			case HalPackage.SENSOR_DEVICE__ROOM:
-				if (resolve) return getRoom();
-				return basicGetRoom();
 			case HalPackage.SENSOR_DEVICE__SENSORREADING:
 				if (resolve) return getSensorreading();
 				return basicGetSensorreading();
 			case HalPackage.SENSOR_DEVICE__PRECONDITION:
 				if (resolve) return getPrecondition();
 				return basicGetPrecondition();
+			case HalPackage.SENSOR_DEVICE__ROOM:
+				if (resolve) return getRoom();
+				return basicGetRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -464,14 +464,14 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 			case HalPackage.SENSOR_DEVICE__SENSORDEVICETYPE:
 				setSensordevicetype((SensorDeviceType)newValue);
 				return;
-			case HalPackage.SENSOR_DEVICE__ROOM:
-				setRoom((Room)newValue);
-				return;
 			case HalPackage.SENSOR_DEVICE__SENSORREADING:
 				setSensorreading((SensorReading)newValue);
 				return;
 			case HalPackage.SENSOR_DEVICE__PRECONDITION:
 				setPrecondition((Precondition)newValue);
+				return;
+			case HalPackage.SENSOR_DEVICE__ROOM:
+				setRoom((Room)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -491,14 +491,14 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 			case HalPackage.SENSOR_DEVICE__SENSORDEVICETYPE:
 				setSensordevicetype((SensorDeviceType)null);
 				return;
-			case HalPackage.SENSOR_DEVICE__ROOM:
-				setRoom((Room)null);
-				return;
 			case HalPackage.SENSOR_DEVICE__SENSORREADING:
 				setSensorreading((SensorReading)null);
 				return;
 			case HalPackage.SENSOR_DEVICE__PRECONDITION:
 				setPrecondition((Precondition)null);
+				return;
+			case HalPackage.SENSOR_DEVICE__ROOM:
+				setRoom((Room)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -516,12 +516,12 @@ public class SensorDeviceImpl extends MinimalEObjectImpl.Container implements Se
 				return DEVICE_NAME_EDEFAULT == null ? deviceName != null : !DEVICE_NAME_EDEFAULT.equals(deviceName);
 			case HalPackage.SENSOR_DEVICE__SENSORDEVICETYPE:
 				return sensordevicetype != null;
-			case HalPackage.SENSOR_DEVICE__ROOM:
-				return room != null;
 			case HalPackage.SENSOR_DEVICE__SENSORREADING:
 				return sensorreading != null;
 			case HalPackage.SENSOR_DEVICE__PRECONDITION:
 				return precondition != null;
+			case HalPackage.SENSOR_DEVICE__ROOM:
+				return room != null;
 		}
 		return super.eIsSet(featureID);
 	}

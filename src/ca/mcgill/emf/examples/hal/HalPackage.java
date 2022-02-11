@@ -443,22 +443,13 @@ public interface HalPackage extends EPackage {
 	int SENSOR_DEVICE__SENSORDEVICETYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSOR_DEVICE__ROOM = 2;
-
-	/**
 	 * The feature id for the '<em><b>Sensorreading</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DEVICE__SENSORREADING = 3;
+	int SENSOR_DEVICE__SENSORREADING = 2;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -467,7 +458,16 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DEVICE__PRECONDITION = 4;
+	int SENSOR_DEVICE__PRECONDITION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DEVICE__ROOM = 4;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Device</em>' class.
@@ -1280,17 +1280,6 @@ public interface HalPackage extends EPackage {
 	EReference getSensorDevice_Sensordevicetype();
 
 	/**
-	 * Returns the meta object for the reference '{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room</em>'.
-	 * @see ca.mcgill.emf.examples.hal.SensorDevice#getRoom()
-	 * @see #getSensorDevice()
-	 * @generated
-	 */
-	EReference getSensorDevice_Room();
-
-	/**
 	 * Returns the meta object for the reference '{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensorreading <em>Sensorreading</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1311,6 +1300,17 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSensorDevice_Precondition();
+
+	/**
+	 * Returns the meta object for the reference '{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SensorDevice#getRoom()
+	 * @see #getSensorDevice()
+	 * @generated
+	 */
+	EReference getSensorDevice_Room();
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Room <em>Room</em>}'.
@@ -1878,14 +1878,6 @@ public interface HalPackage extends EPackage {
 		EReference SENSOR_DEVICE__SENSORDEVICETYPE = eINSTANCE.getSensorDevice_Sensordevicetype();
 
 		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SENSOR_DEVICE__ROOM = eINSTANCE.getSensorDevice_Room();
-
-		/**
 		 * The meta object literal for the '<em><b>Sensorreading</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1900,6 +1892,14 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SENSOR_DEVICE__PRECONDITION = eINSTANCE.getSensorDevice_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SENSOR_DEVICE__ROOM = eINSTANCE.getSensorDevice_Room();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.RoomImpl <em>Room</em>}' class.

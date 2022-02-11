@@ -484,7 +484,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSensorDevice_Room() {
+	public EReference getSensorDevice_Sensorreading() {
 		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -493,7 +493,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSensorDevice_Sensorreading() {
+	public EReference getSensorDevice_Precondition() {
 		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -502,7 +502,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSensorDevice_Precondition() {
+	public EReference getSensorDevice_Room() {
 		return (EReference)sensorDeviceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -813,9 +813,9 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		sensorDeviceEClass = createEClass(SENSOR_DEVICE);
 		createEAttribute(sensorDeviceEClass, SENSOR_DEVICE__DEVICE_NAME);
 		createEReference(sensorDeviceEClass, SENSOR_DEVICE__SENSORDEVICETYPE);
-		createEReference(sensorDeviceEClass, SENSOR_DEVICE__ROOM);
 		createEReference(sensorDeviceEClass, SENSOR_DEVICE__SENSORREADING);
 		createEReference(sensorDeviceEClass, SENSOR_DEVICE__PRECONDITION);
+		createEReference(sensorDeviceEClass, SENSOR_DEVICE__ROOM);
 
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__ROOM_ID);
@@ -925,9 +925,9 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEClass(sensorDeviceEClass, SensorDevice.class, "SensorDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensorDevice_DeviceName(), ecorePackage.getEString(), "deviceName", null, 0, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensorDevice_Sensordevicetype(), this.getSensorDeviceType(), this.getSensorDeviceType_Sensordevice(), "sensordevicetype", null, 1, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensorDevice_Room(), this.getRoom(), this.getRoom_Sensordevice(), "room", null, 1, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensorDevice_Sensorreading(), this.getSensorReading(), this.getSensorReading_Sensordevice(), "sensorreading", null, 0, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensorDevice_Precondition(), this.getPrecondition(), this.getPrecondition_Sensordevice(), "precondition", null, 0, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensorDevice_Room(), this.getRoom(), this.getRoom_Sensordevice(), "room", null, 1, 1, SensorDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_RoomId(), ecorePackage.getEString(), "roomId", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

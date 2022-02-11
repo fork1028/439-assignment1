@@ -48,9 +48,9 @@
     <genClasses ecoreClass="HAL.ecore#//SensorDevice">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HAL.ecore#//SensorDevice/deviceName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//SensorDevice/sensordevicetype"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//SensorDevice/room"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//SensorDevice/sensorreading"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//SensorDevice/precondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference HAL.ecore#//SensorDevice/room"/>
     </genClasses>
     <genClasses ecoreClass="HAL.ecore#//Room">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HAL.ecore#//Room/roomId"/>

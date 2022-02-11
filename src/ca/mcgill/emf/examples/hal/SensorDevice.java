@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getDeviceName <em>Device Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensordevicetype <em>Sensordevicetype</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getSensorreading <em>Sensorreading</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice()
@@ -72,30 +72,6 @@ public interface SensorDevice extends EObject {
 	void setSensordevicetype(SensorDeviceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.Room#getSensordevice <em>Sensordevice</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference.
-	 * @see #setRoom(Room)
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice_Room()
-	 * @see ca.mcgill.emf.examples.hal.Room#getSensordevice
-	 * @model opposite="sensordevice" required="true"
-	 * @generated
-	 */
-	Room getRoom();
-
-	/**
-	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room</em>' reference.
-	 * @see #getRoom()
-	 * @generated
-	 */
-	void setRoom(Room value);
-
-	/**
 	 * Returns the value of the '<em><b>Sensorreading</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.SensorReading#getSensordevice <em>Sensordevice</em>}'.
 	 * <!-- begin-user-doc -->
@@ -142,5 +118,29 @@ public interface SensorDevice extends EObject {
 	 * @generated
 	 */
 	void setPrecondition(Precondition value);
+
+	/**
+	 * Returns the value of the '<em><b>Room</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.Room#getSensordevice <em>Sensordevice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room</em>' reference.
+	 * @see #setRoom(Room)
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getSensorDevice_Room()
+	 * @see ca.mcgill.emf.examples.hal.Room#getSensordevice
+	 * @model opposite="sensordevice" required="true"
+	 * @generated
+	 */
+	Room getRoom();
+
+	/**
+	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.SensorDevice#getRoom <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Room</em>' reference.
+	 * @see #getRoom()
+	 * @generated
+	 */
+	void setRoom(Room value);
 
 } // SensorDevice

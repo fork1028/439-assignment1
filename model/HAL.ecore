@@ -51,12 +51,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensordevicetype" lowerBound="1"
         eType="#//SensorDeviceType" eOpposite="#//SensorDeviceType/sensordevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" lowerBound="1" eType="#//Room"
-        eOpposite="#//Room/sensordevice"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensorreading" eType="#//SensorReading"
         eOpposite="#//SensorReading/sensordevice"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//Precondition"
         eOpposite="#//Precondition/sensordevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" lowerBound="1" eType="#//Room"
+        eOpposite="#//Room/sensordevice"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -31,59 +31,60 @@ import ca.mcgill.emf.examples.hal.controller.TORoom;
 
 public class HALPage extends JFrame {
 
-//	private static final long serialVersionUID = -4426310869335015542L;
-//
-//	// UI elements
-//	private JLabel errorMessage = new JLabel();
-//	// group
-//	private JComboBox<String> groupsList = new JComboBox<String>(new String[0]);
-//	private JButton showGroupButton = new JButton();
-//	private JButton deleteGroupButton = new JButton();
-//	private JButton clearGroupButton = new JButton();
-//	private JLabel groupNameLabel = new JLabel();
-//	private JLabel groupNameText = new JLabel();
-//	private JLabel newGroupNameLabel = new JLabel();
-//	private JTextField newGroupNameTextField = new JTextField();
-//	private JButton addGroupButton = new JButton();
-//	private JButton updateGroupButton = new JButton();
-//	// group's teams
-//	private JLabel removeTeamLabel = new JLabel();
-//	private JTable teamsTable = new JTable();
-//	private JScrollPane teamsScrollPane = new JScrollPane(teamsTable);
-//	private JLabel newTeamNameLabel = new JLabel();
-//	private JTextField newTeamNameTextField = new JTextField();
-//	private JButton addTeamButton = new JButton();
-//
-//	// data elements
-//	private String error = null;
-//	// group's teams
-//	private DefaultTableModel teamsDtm;
-//	private String teamsColumnNames[] = { "Team" };
-//	private static final int HEIGHT_TEAMS_TABLE = 100;
-//
-//	public HALPage() {
-//		initComponents();
-//		refreshData(null);
-//	}
-//
-//	/**
-//	 * This method is called from within the constructor to initialize the form.
-//	 */
-//	@SuppressWarnings("serial")
-//	private void initComponents() {
-//		// elements for error message
-//		errorMessage.setForeground(Color.RED);
-//
-//		// elements for group
-//		initializeButton(showGroupButton, "Show", this::showGroupButtonActionPerformed);
-//		initializeButton(deleteGroupButton, "Delete", this::deleteGroupButtonActionPerformed);
-//		initializeButton(clearGroupButton, "Clear", this::clearGroupButtonActionPerformed);
-//		groupNameLabel.setText("Group Name:");
-//		groupNameText.setText("");
-//		newGroupNameLabel.setText("New Group Name:");
-//		initializeButton(addGroupButton, "Add", this::addGroupButtonActionPerformed);
-//		initializeButton(updateGroupButton, "Update", this::updateGroupButtonActionPerformed);
-//
+	private static final long serialVersionUID = -4426310869335015542L;
+
+	// UI elements
+	private JLabel errorMessage = new JLabel();
+	// room
+	private JComboBox<String> roomsList = new JComboBox<String>(new String[0]);
+	private JButton showRoomButton = new JButton();
+	private JButton deleteRoomButton = new JButton();
+	private JButton clearRoomButton = new JButton();
+	private JLabel roomNameLabel = new JLabel();
+	private JLabel roomNameText = new JLabel();
+	private JLabel newRoomNameLabel = new JLabel();
+	private JTextField newRoomNameTextField = new JTextField();
+	private JButton addRoomButton = new JButton();
+	private JButton updateRoomButton = new JButton();
+	// room's sensor devices
+	private JLabel removeSensorDeviceLabel = new JLabel();
+	private JTable sensorDevicesTable = new JTable();
+	private JScrollPane sensorDevicesScrollPane = new JScrollPane(sensorDevicesTable);
+	private JLabel newSensorDeviceNameLabel = new JLabel();
+	private JTextField newSensorDeviceNameTextField = new JTextField();
+	private JComboBox<String> sensorDeviceTypeList = new JComboBox<String>(new String[0]);
+	private JButton addSensorDeviceButton = new JButton();
+
+	// data elements
+	private String error = null;
+	// room's sensor devices
+	private DefaultTableModel sensorDevicesDtm;
+	private String sensorDevicesColumnNames[] = { "Sensor Device" };
+	private static final int HEIGHT_TEAMS_TABLE = 100;
+
+	public HALPage() {
+		initComponents();
+		refreshData(null);
+	}
+
+	/**
+	 * This method is called from within the constructor to initialize the form.
+	 */
+	@SuppressWarnings("serial")
+	private void initComponents() {
+		// elements for error message
+		errorMessage.setForeground(Color.RED);
+
+		// elements for room
+		initializeButton(showRoomButton, "Show", this::showRoomButtonActionPerformed);
+		initializeButton(deleteRoomButton, "Delete", this::deleteRoomButtonActionPerformed);
+		initializeButton(clearRoomButton, "Clear", this::clearRoomButtonActionPerformed);
+		roomNameLabel.setText("Room Name:");
+		roomNameText.setText("");
+		newRoomNameLabel.setText("New Room Name:");
+		initializeButton(addRoomButton, "Add", this::addRoomButtonActionPerformed);
+		initializeButton(updateRoomButton, "Update", this::updateRoomButtonActionPerformed);
+
 //		// elements for group's teams
 //		removeTeamLabel.setText("Select a row in the table and hit the delete key to remove a team");
 //		this.add(teamsScrollPane);
@@ -102,188 +103,188 @@ public class HALPage extends JFrame {
 //		});
 //		newTeamNameLabel.setText("New Team Name:");
 //		initializeButton(addTeamButton, "Add Team", this::addTeamButtonActionPerformed);
-//
-//		// global settings and listeners
-//		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//		setTitle("Tournament System: Group Management");
-//
-//		// horizontal line elements
-//		JSeparator horizontalLine = new JSeparator();
-//
-//		// layout
-//		GroupLayout layout = new GroupLayout(getContentPane());
-//		getContentPane().setLayout(layout);
-//		layout.setAutoCreateGaps(true);
-//		layout.setAutoCreateContainerGaps(true);
-//		layout.setHorizontalGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup()
-//				.addComponent(errorMessage)
-//				.addGroup(layout.createSequentialGroup().addComponent(groupsList, 200, 200, 400)
-//						.addComponent(showGroupButton).addComponent(deleteGroupButton).addComponent(clearGroupButton))
-//				.addComponent(horizontalLine)
-//				.addGroup(layout.createSequentialGroup().addComponent(groupNameLabel).addComponent(groupNameText))
-//				.addGroup(layout.createSequentialGroup().addComponent(newGroupNameLabel)
-//						.addComponent(newGroupNameTextField, 200, 200, 400).addComponent(addGroupButton)
-//						.addComponent(updateGroupButton))
-//				.addComponent(removeTeamLabel).addComponent(teamsScrollPane)
-//				.addGroup(layout.createSequentialGroup().addComponent(newTeamNameLabel)
-//						.addComponent(newTeamNameTextField, 200, 200, 400).addComponent(addTeamButton))));
-//
-//		layout.setVerticalGroup(layout.createParallelGroup()
-//				.addGroup(layout.createSequentialGroup().addComponent(errorMessage)
-//						.addGroup(layout.createParallelGroup().addComponent(groupsList).addComponent(showGroupButton)
-//								.addComponent(deleteGroupButton).addComponent(clearGroupButton))
-//						.addComponent(horizontalLine)
-//						.addGroup(layout.createParallelGroup().addComponent(groupNameLabel).addComponent(groupNameText))
-//						.addGroup(layout.createParallelGroup().addComponent(newGroupNameLabel)
-//								.addComponent(newGroupNameTextField).addComponent(addGroupButton)
-//								.addComponent(updateGroupButton))
-//						.addComponent(removeTeamLabel).addComponent(teamsScrollPane)
-//						.addGroup(layout.createParallelGroup().addComponent(newTeamNameLabel)
-//								.addComponent(newTeamNameTextField).addComponent(addTeamButton))));
-//
-//		pack();
+
+		// global settings and listeners
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setTitle("Home Automation Language (HAL) System");
+
+		// horizontal line elements
+		JSeparator horizontalLine = new JSeparator();
+
+		// layout
+		GroupLayout layout = new GroupLayout(getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setAutoCreateGaps(true);
+		layout.setAutoCreateContainerGaps(true);
+		layout.setHorizontalGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup()
+				.addComponent(errorMessage)
+				.addGroup(layout.createSequentialGroup().addComponent(roomsList, 200, 200, 400)
+						.addComponent(showRoomButton).addComponent(deleteRoomButton).addComponent(clearRoomButton))
+				.addComponent(horizontalLine)
+				.addGroup(layout.createSequentialGroup().addComponent(roomNameLabel).addComponent(roomNameText))
+				.addGroup(layout.createSequentialGroup().addComponent(newRoomNameLabel)
+						.addComponent(newRoomNameTextField, 200, 200, 400).addComponent(addRoomButton)
+						.addComponent(updateRoomButton))
+				.addComponent(removeSensorDeviceLabel).addComponent(sensorDevicesScrollPane)
+				.addGroup(layout.createSequentialGroup().addComponent(newSensorDeviceNameLabel)
+						.addComponent(newSensorDeviceNameTextField, 200, 200, 400).addComponent(addSensorDeviceButton))));
+
+		layout.setVerticalGroup(layout.createParallelGroup()
+				.addGroup(layout.createSequentialGroup().addComponent(errorMessage)
+						.addGroup(layout.createParallelGroup().addComponent(roomsList).addComponent(showRoomButton)
+								.addComponent(deleteRoomButton).addComponent(clearRoomButton))
+						.addComponent(horizontalLine)
+						.addGroup(layout.createParallelGroup().addComponent(roomNameLabel).addComponent(roomNameText))
+						.addGroup(layout.createParallelGroup().addComponent(newRoomNameLabel)
+								.addComponent(newRoomNameTextField).addComponent(addRoomButton)
+								.addComponent(updateRoomButton))
+						.addComponent(removeSensorDeviceLabel).addComponent(sensorDevicesScrollPane)
+						.addGroup(layout.createParallelGroup().addComponent(newSensorDeviceNameLabel)
+								.addComponent(newSensorDeviceNameTextField).addComponent(addSensorDeviceButton))));
+
+		pack();
+	}
+
+	/**
+	 * This method is called each time the page needs to be updated to the latest
+	 * data. An empty page is shown if null is passed into the method.
+	 */
+	private void refreshData(String roomName) {
+		// error
+		errorMessage.setText(error);
+		if (error == null || error.length() == 0) {
+			// retrieve the room
+			TORoom foundRoom = null;
+			if (roomName != null) {
+				foundRoom = HALController.getRoom(roomName);
+			}
+			// populate room list
+			roomsList.removeAllItems();
+			int index = 0, foundIndex = -1;
+			for (String rName : HALController.getRooms()) {
+				roomsList.addItem(rName);
+				if (rName.equals(foundRoom == null ? null : foundRoom.getName())) {
+					foundIndex = index;
+				}
+				index++;
+			}
+			;
+			// enable rooms list UI elements only if at least one group exist
+			roomsList.setEnabled(index > 0);
+			roomsList.setSelectedIndex(foundIndex);
+			showRoomButton.setEnabled(index > 0);
+			deleteRoomButton.setEnabled(index > 0);
+			// populate other UI elements depending on whether a group was found or not
+			if (foundIndex == -1) {
+				foundRoom = null;
+				// room
+				roomNameText.setText("");
+				newRoomNameTextField.setText("");
+				// room's sensor devices
+				populateSensorDevicesTable(null);
+				newSensorDeviceNameTextField.setText("");
+				// set allowed UI elements to enabled
+				clearRoomButton.setEnabled(false);
+				addRoomButton.setEnabled(true);
+				updateRoomButton.setEnabled(false);
+				newSensorDeviceNameTextField.setEnabled(false);
+				addSensorDeviceButton.setEnabled(false);
+			} else {
+				// room
+				roomNameText.setText(foundRoom.getName());
+				newRoomNameTextField.setText(foundRoom.getName());
+				// room's sensor devices
+				populateSensorDevicesTable(foundRoom);
+				newSensorDeviceNameTextField.setText("");
+				// set allowed UI elements to enabled
+				clearRoomButton.setEnabled(true);
+				addRoomButton.setEnabled(false);
+				updateRoomButton.setEnabled(true);
+				newSensorDeviceNameTextField.setEnabled(true);
+				addSensorDeviceButton.setEnabled(true);
+			}
+			Dimension d = sensorDevicesTable.getPreferredSize();
+			sensorDevicesScrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
+		}
+
+		// this is needed because the size of the window changes depending on whether an
+		// error message is shown or not
+		pack();
+	}
+
+	/**
+	 * The following ...ActionPerformed methods first call the Controller and then
+	 * refresh the page with the desired group.
+	 */
+
+	private void addRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		error = HALController.addRoom(newRoomNameTextField.getText());
+		refreshData(newRoomNameTextField.getText());
+	}
+
+	private void clearRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		error = null;
+		refreshData(null);
+	}
+
+	private void deleteRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		if (roomsList.getSelectedIndex() != -1) {
+			String roomName = (String) roomsList.getSelectedItem();
+			int choice = JOptionPane.showConfirmDialog(null, "Do you want to delete room " + roomName + "?",
+					"Confirm Deletion", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			if (choice == 0) {
+				error = HALController.deleteRoom(roomName);
+				refreshData(null);
+			}
+		}
+	}
+
+	private void showRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		error = null;
+		refreshData((String) roomsList.getSelectedItem());
+	}
+
+	private void updateRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		error = HALController.updateRoom(roomNameText.getText(), newRoomNameTextField.getText());
+		refreshData(newRoomNameTextField.getText());
+	}
+
+//	private void addSensorDeviceButtonActionPerformed(java.awt.event.ActionEvent evt) {
+//		error = HALController.addSensor(roomNameText.getText(), newSensorDeviceNameTextField.getText());
+//		refreshData(roomNameText.getText());
 //	}
-//
-//	/**
-//	 * This method is called each time the page needs to be updated to the latest
-//	 * data. An empty page is shown if null is passed into the method.
-//	 */
-//	private void refreshData(String groupName) {
-//		// error
-//		errorMessage.setText(error);
-//		if (error == null || error.length() == 0) {
-//			// retrieve the group
-//			TOGroup foundGroup = null;
-//			if (groupName != null) {
-//				foundGroup = TournamentController.getGroup(groupName);
-//			}
-//			// populate group list
-//			groupsList.removeAllItems();
-//			int index = 0, foundIndex = -1;
-//			for (String gName : TournamentController.getGroups()) {
-//				groupsList.addItem(gName);
-//				if (gName.equals(foundGroup == null ? null : foundGroup.getName())) {
-//					foundIndex = index;
-//				}
-//				index++;
-//			}
-//			;
-//			// enable groups list UI elements only if at least one group exist
-//			groupsList.setEnabled(index > 0);
-//			groupsList.setSelectedIndex(foundIndex);
-//			showGroupButton.setEnabled(index > 0);
-//			deleteGroupButton.setEnabled(index > 0);
-//			// populate other UI elements depending on whether a group was found or not
-//			if (foundIndex == -1) {
-//				foundGroup = null;
-//				// group
-//				groupNameText.setText("");
-//				newGroupNameTextField.setText("");
-//				// group's teams
-//				populateTeamsTable(null);
-//				newTeamNameTextField.setText("");
-//				// set allowed UI elements to enabled
-//				clearGroupButton.setEnabled(false);
-//				addGroupButton.setEnabled(true);
-//				updateGroupButton.setEnabled(false);
-//				newTeamNameTextField.setEnabled(false);
-//				addTeamButton.setEnabled(false);
-//			} else {
-//				// group
-//				groupNameText.setText(foundGroup.getName());
-//				newGroupNameTextField.setText(foundGroup.getName());
-//				// group's teams
-//				populateTeamsTable(foundGroup);
-//				newTeamNameTextField.setText("");
-//				// set allowed UI elements to enabled
-//				clearGroupButton.setEnabled(true);
-//				addGroupButton.setEnabled(false);
-//				updateGroupButton.setEnabled(true);
-//				newTeamNameTextField.setEnabled(true);
-//				addTeamButton.setEnabled(true);
-//			}
-//			Dimension d = teamsTable.getPreferredSize();
-//			teamsScrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
-//		}
-//
-//		// this is needed because the size of the window changes depending on whether an
-//		// error message is shown or not
-//		pack();
-//	}
-//
-//	/**
-//	 * The following ...ActionPerformed methods first call the Controller and then
-//	 * refresh the page with the desired group.
-//	 */
-//
-//	private void addGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		error = TournamentController.addGroup(newGroupNameTextField.getText());
-//		refreshData(newGroupNameTextField.getText());
-//	}
-//
-//	private void clearGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		error = null;
-//		refreshData(null);
-//	}
-//
-//	private void deleteGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		if (groupsList.getSelectedIndex() != -1) {
-//			String groupName = (String) groupsList.getSelectedItem();
-//			int choice = JOptionPane.showConfirmDialog(null, "Do you want to delete group " + groupName + "?",
-//					"Confirm Deletion", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-//			if (choice == 0) {
-//				error = TournamentController.deleteGroup(groupName);
-//				refreshData(null);
-//			}
-//		}
-//	}
-//
-//	private void showGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		error = null;
-//		refreshData((String) groupsList.getSelectedItem());
-//	}
-//
-//	private void updateGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		error = TournamentController.updateGroup(groupNameText.getText(), newGroupNameTextField.getText());
-//		refreshData(newGroupNameTextField.getText());
-//	}
-//
-//	private void addTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//		error = TournamentController.addTeam(groupNameText.getText(), newTeamNameTextField.getText());
-//		refreshData(groupNameText.getText());
-//	}
-//
-//	private void teamsTableDeleteKeyActionPerformed(java.awt.event.ActionEvent evt) {
-//		if (teamsTable.getSelectedRow() != -1) {
-//			String teamName = (String) teamsTable.getModel().getValueAt(teamsTable.getSelectedRow(), 0);
-//			int choice = JOptionPane.showConfirmDialog(null, "Do you want to delete team " + teamName + "?",
-//					"Confirm Deletion", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-//			if (choice == 0) {
-//				error = TournamentController.removeTeam(teamName);
-//				refreshData(groupNameText.getText());
-//			}
-//		}
-//	}
-//
-//	/**
-//	 * The following methods are helper methods to simplify the methods.
-//	 */
-//
-//	private void initializeButton(JButton button, String text, ActionListener actionListener) {
-//		button.setText(text);
-//		button.addActionListener(actionListener);
-//	}
-//
-//	private void populateTeamsTable(TOGroup foundGroup) {
-//		teamsDtm = new DefaultTableModel(0, 0);
-//		teamsDtm.setColumnIdentifiers(teamsColumnNames);
-//		teamsTable.setModel(teamsDtm);
-//		if (foundGroup != null) {
-//			for (String teamName : foundGroup.getTeamNames()) {
-//				Object[] obj = { teamName };
-//				teamsDtm.addRow(obj);
-//			}
-//		}
-//	}
+
+	private void sensorDevicesTableDeleteKeyActionPerformed(java.awt.event.ActionEvent evt) {
+		if (sensorDevicesTable.getSelectedRow() != -1) {
+			String sensorDeviceName = (String) sensorDevicesTable.getModel().getValueAt(sensorDevicesTable.getSelectedRow(), 0);
+			int choice = JOptionPane.showConfirmDialog(null, "Do you want to delete sensor device " + sensorDeviceName + "?",
+					"Confirm Deletion", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			if (choice == 0) {
+				error = HALController.deleteSensor(sensorDeviceName);
+				refreshData(roomNameText.getText());
+			}
+		}
+	}
+
+	/**
+	 * The following methods are helper methods to simplify the methods.
+	 */
+
+	private void initializeButton(JButton button, String text, ActionListener actionListener) {
+		button.setText(text);
+		button.addActionListener(actionListener);
+	}
+
+	private void populateSensorDevicesTable(TORoom foundRoom) {
+		sensorDevicesDtm = new DefaultTableModel(0, 0);
+		sensorDevicesDtm.setColumnIdentifiers(sensorDevicesColumnNames);
+		sensorDevicesTable.setModel(sensorDevicesDtm);
+		if (foundRoom != null) {
+			for (String sensorDeviceName : foundRoom.getSensorDeviceNames()) {
+				Object[] obj = { sensorDeviceName };
+				sensorDevicesDtm.addRow(obj);
+			}
+		}
+	}
 
 }
