@@ -43,6 +43,12 @@ public class HALApplication {
 	
 	public static SmartHome load() {
 		SmartHome smartHome;
+		SensorDeviceType temperatureSensor;
+		SensorDeviceType movementSensor;
+		SensorDeviceType LightSensor;
+		ActuatorDeviceType heater;
+		ActuatorDeviceType lock;
+		ActuatorDeviceType lightSwitch;
 		try {
 			Resource resource = ResourceHelper.INSTANCE.loadResource(filename);
 	        smartHome = (SmartHome) resource.getContents().get(0);
@@ -50,6 +56,14 @@ public class HALApplication {
 			// model cannot be loaded - create an empty smart home
 			smartHome = HalFactory.eINSTANCE.createSmartHome();
 			smartHome.setHomeName("My Smart Home");
+			// create sensors
+			temperatureSensor = HalFactory.eINSTANCE.createSensorDeviceType();
+			movementSensor = HalFactory.eINSTANCE.createSensorDeviceType();
+			LightSensor = HalFactory.eINSTANCE.createSensorDeviceType();
+			// create actuators
+			heater = HalFactory.eINSTANCE.createActuatorDeviceType();
+			lock = HalFactory.eINSTANCE.createActuatorDeviceType();
+			lightSwitch = HalFactory.eINSTANCE.createActuatorDeviceType();
 		}
 		return smartHome;
 	}
