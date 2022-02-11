@@ -51,7 +51,6 @@ public class HALController {
 			for (ActuatorDevice ad : smartHome.getActuatordevice()) {
 				if (ad.getRoom().equals(r)) {
 					ad.setRoom(null);
-					ad.setControlcommand(null);
 					// delete the actuator
 					String actuatorName = ad.getDeviceName();
 					deleteActuator(actuatorName);
