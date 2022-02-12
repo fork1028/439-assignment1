@@ -66,27 +66,39 @@ public class HALController {
 		// if r is not found, no error message is returned because the end result is the same:
 		if (r != null) {
 			SmartHome smartHome = HALApplication.getSmartHome();
+//			// remove all actuators of the room
+//			for (ActuatorDevice ad : smartHome.getActuatordevice()) {
+//				if (ad.getRoom().equals(r)) {
+//					ad.setRoom(null);
+//					// delete the actuator
+//					String actuatorName = ad.getDeviceName();
+//					deleteActuator(actuatorName);
+//				}
+//			}
+//			// remove all sensors of the room
+//			for (SensorDevice sd : smartHome.getSensordevice()) {
+//				if (sd.getRoom().equals(r)) {
+//					// sd.setPrecondition(null);
+//					// delete the sensor
+//					String sensorName = sd.getDeviceName();
+//					deleteSensor(sensorName);
+//					// delete the sensor's sensor readings
+////					SensorReading sensorReading = sd.getSensorreading();
+////					ActivityLog activityLog = sensorReading.getActivitylog();
+////					activityLog.getSensorreading().remove(sensorReading);		
+//				}
+//			}
 			// remove all actuators of the room
-			for (ActuatorDevice ad : smartHome.getActuatordevice()) {
-				if (ad.getRoom().equals(r)) {
-					ad.setRoom(null);
-					// delete the actuator
-					String actuatorName = ad.getDeviceName();
-					deleteActuator(actuatorName);
-				}
+			while (r.getActuatordevice().size() > 0) {
+				ActuatorDevice ad = r.getActuatordevice().get(0);
+				ad.setRoom(null);
+				smartHome.getActuatordevice().remove(ad);
 			}
 			// remove all sensors of the room
-			for (SensorDevice sd : smartHome.getSensordevice()) {
-				if (sd.getRoom().equals(r)) {
-					// sd.setPrecondition(null);
-					// delete the sensor
-					String sensorName = sd.getDeviceName();
-					deleteSensor(sensorName);
-					// delete the sensor's sensor readings
-//					SensorReading sensorReading = sd.getSensorreading();
-//					ActivityLog activityLog = sensorReading.getActivitylog();
-//					activityLog.getSensorreading().remove(sensorReading);		
-				}
+			while (r.getSensordevice().size() > 0) {
+				SensorDevice sd = r.getSensordevice().get(0);
+				sd.setRoom(null);
+				smartHome.getSensordevice().remove(sd);
 			}
 			// remove the room
 			smartHome.getRoom().remove(r);
