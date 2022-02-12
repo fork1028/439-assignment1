@@ -170,6 +170,7 @@ public class HALPage extends JFrame {
 				index++;
 			};
 			// populate sensor device types list
+			sensorDeviceTypeList.removeAllItems();
 			for (String typeName : HALController.getAllDeviceTypes()) {
 				sensorDeviceTypeList.addItem(typeName);
 			};

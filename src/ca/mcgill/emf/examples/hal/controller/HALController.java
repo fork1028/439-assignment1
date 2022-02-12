@@ -145,16 +145,24 @@ public class HALController {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
 		}
-//		if (existsSensorDeviceType(sensorDeviceTypeName, roomName)) {
-//			return "Sensor device with type " + sensorDeviceTypeName + " already exists";
-//		}
+		if (existsSensorDevice(sensorDeviceName, roomName)) {
+			return "Sensor device with name " + sensorDeviceName + " already exists";
+		}
 		SmartHome smartHome = HALApplication.getSmartHome();
 		SensorDevice sd = HalFactory.eINSTANCE.createSensorDevice();
 		sd.setDeviceName(sensorDeviceName);
+		System.out.println("here");
+		System.out.println(getDeviceType(sensorDeviceTypeName));
+		System.out.println("here");
 		sd.setSensordevicetype((SensorDeviceType)getDeviceType(sensorDeviceTypeName));
+		System.out.println(sd.getSensordevicetype());
+		System.out.println(sd.getSensordevicetype().getTypeName());
 		Room r = findRoom(roomName);
 		r.getSensordevice().add(sd);
 		smartHome.getSensordevice().add(sd);
+		System.out.println("111");
+		System.out.println(smartHome.getSensordevice().get(0).getSensordevicetype());
+		System.out.println("111");
 		HALApplication.save();
 		return null;
 	}
@@ -188,9 +196,9 @@ public class HALController {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
 		}
-//		if (existsActuatorDeviceType(actuatorDeviceType, roomName)) {
-//			return "Actuator device with type " + actuatorDeviceType + " already exists";
-//		}
+		if (existsActuatorDevice(actuatorDeviceName, roomName)) {
+			return "Actuator device with name " + actuatorDeviceName + " already exists";
+		}
 		SmartHome smartHome = HALApplication.getSmartHome();
 		ActuatorDevice ad = HalFactory.eINSTANCE.createActuatorDevice();
 		ad.setDeviceName(actuatorDeviceName);
@@ -271,8 +279,15 @@ public class HALController {
 	
 	public static String getSensorDeviceTypeName(String sensorDeviceName) {
 		SmartHome smartHome = HALApplication.getSmartHome();
+		System.out.println("333");
+		System.out.println(smartHome.getSensordevice().get(0).getSensordevicetype());
+		System.out.println("333");
 		for (SensorDevice sd : smartHome.getSensordevice()) {
 			if (sd.getDeviceName().equals(sensorDeviceName)) {
+				System.out.println("helper");
+				System.out.println(sd.getDeviceName());
+				System.out.println(sd.getSensordevicetype());
+				System.out.println("helper");
 				return sd.getSensordevicetype().getTypeName();
 			}
 		}
@@ -298,21 +313,21 @@ public class HALController {
 		return deviceTypeNames;
 	}
 	
-//	/**
-//	 * 
-//	 * @param sensorDeviceType
-//	 * @param roomName
-//	 * @return Boolean
-//	 */
-//	private static Boolean existsSensorDeviceType(String sensorDeviceTypeName, String roomName) {
-//		Room r = findRoom(roomName);
-//		for (SensorDevice sd : r.getSensordevice()) {
-//			if (sd.getSensordevicetype().toString().equals(sensorDeviceTypeName)) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
+	/**
+	 * 
+	 * @param sensorDeviceName
+	 * @param roomName
+	 * @return Boolean
+	 */
+	private static Boolean existsSensorDevice(String sensorDeviceName, String roomName) {
+		Room r = findRoom(roomName);
+		for (SensorDevice sd : r.getSensordevice()) {
+			if (sd.getDeviceName().equals(sensorDeviceName)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	// actuator
 	
@@ -331,21 +346,21 @@ public class HALController {
 		return null;
 	}
 
-//	/**
-//	 * 
-//	 * @param actuatorDeviceType
-//	 * @param roomName
-//	 * @return Boolean
-//	 */
-//	private static Boolean existsActuatorDeviceType(ActuatorDeviceType actuatorDeviceType, String roomName) {
-//		Room r = findRoom(roomName);
-//		for (ActuatorDevice ad : r.getActuatordevice()) {
-//			if (ad.getActuatordevicetype() == actuatorDeviceType) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
+	/**
+	 * 
+	 * @param actuatorDeviceName
+	 * @param roomName
+	 * @return Boolean
+	 */
+	private static Boolean existsActuatorDevice(String actuatorDeviceName, String roomName) {
+		Room r = findRoom(roomName);
+		for (ActuatorDevice ad : r.getActuatordevice()) {
+			if (ad.getDeviceName().equals(actuatorDeviceName)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 
 }
