@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<hal:ActuatorDeviceType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hal="http://mcgill.ca/emf/examples/hal" typeName="Light Switch"/>
+<hal:SmartHome xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="http://mcgill.ca/emf/examples/hal" homeName="My Smart Home">
+  <room roomName="dd"/>
+  <devicetype xsi:type="hal:SensorDeviceType" href="data/data#/"/>
+  <devicetype xsi:type="hal:SensorDeviceType" href="data/data#/"/>
+  <devicetype xsi:type="hal:SensorDeviceType" href="data/data#/"/>
+  <devicetype xsi:type="hal:ActuatorDeviceType" href="data/data#/"/>
+  <devicetype xsi:type="hal:ActuatorDeviceType" href="data/data#/"/>
+  <devicetype xsi:type="hal:ActuatorDeviceType" href="data/data#/"/>
+</hal:SmartHome>
