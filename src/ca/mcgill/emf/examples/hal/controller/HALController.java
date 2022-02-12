@@ -163,18 +163,10 @@ public class HALController {
 		SmartHome smartHome = HALApplication.getSmartHome();
 		SensorDevice sd = HalFactory.eINSTANCE.createSensorDevice();
 		sd.setDeviceName(sensorDeviceName);
-		System.out.println("here");
-		System.out.println(getDeviceType(sensorDeviceTypeName));
-		System.out.println("here");
 		sd.setSensordevicetype((SensorDeviceType)getDeviceType(sensorDeviceTypeName));
-		System.out.println(sd.getSensordevicetype());
-		System.out.println(sd.getSensordevicetype().getTypeName());
 		Room r = findRoom(roomName);
 		r.getSensordevice().add(sd);
 		smartHome.getSensordevice().add(sd);
-		System.out.println("111");
-		System.out.println(smartHome.getSensordevice().get(0).getSensordevicetype());
-		System.out.println("111");
 		HALApplication.save();
 		return null;
 	}
@@ -204,7 +196,7 @@ public class HALController {
 	 * @param actuatorDeviceType
 	 * @return
 	 */
-	public static String addActuator(String roomName, String actuatorDeviceName, ActuatorDeviceType actuatorDeviceType) {
+	public static String addActuator(String roomName, String actuatorDeviceName, String actuatorDeviceTypeName) {
 		if (!isRoomExisted(roomName)) {
 			return "Room with name " + roomName + " does not exist";
 		}
@@ -214,6 +206,7 @@ public class HALController {
 		SmartHome smartHome = HALApplication.getSmartHome();
 		ActuatorDevice ad = HalFactory.eINSTANCE.createActuatorDevice();
 		ad.setDeviceName(actuatorDeviceName);
+		ad.setActuatordevicetype((ActuatorDeviceType)getDeviceType(actuatorDeviceTypeName));
 		Room r = findRoom(roomName);
 		r.getActuatordevice().add(ad);
 		smartHome.getActuatordevice().add(ad);
@@ -291,16 +284,19 @@ public class HALController {
 	
 	public static String getSensorDeviceTypeName(String sensorDeviceName) {
 		SmartHome smartHome = HALApplication.getSmartHome();
-		System.out.println("333");
-		System.out.println(smartHome.getSensordevice().get(0).getSensordevicetype());
-		System.out.println("333");
 		for (SensorDevice sd : smartHome.getSensordevice()) {
 			if (sd.getDeviceName().equals(sensorDeviceName)) {
-				System.out.println("helper");
-				System.out.println(sd.getDeviceName());
-				System.out.println(sd.getSensordevicetype());
-				System.out.println("helper");
 				return sd.getSensordevicetype().getTypeName();
+			}
+		}
+		return null;
+	}
+	
+	public static String getActuatorDeviceTypeName(String actuatorDeviceName) {
+		SmartHome smartHome = HALApplication.getSmartHome();
+		for (ActuatorDevice ad : smartHome.getActuatordevice()) {
+			if (ad.getDeviceName().equals(actuatorDeviceName)) {
+				return ad.getActuatordevicetype().getTypeName();
 			}
 		}
 		return null;
