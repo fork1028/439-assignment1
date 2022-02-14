@@ -56,12 +56,9 @@ public class HALApplication {
 		ActuatorDeviceType lock;
 		ActuatorDeviceType lightSwitch;
 		try {
-			System.out.println("loaded");
 			Resource resource = ResourceHelper.INSTANCE.loadResource(filename);
 			smartHome = (SmartHome) resource.getContents().get(0);
-			System.out.println(resource.getContents());
 		} catch (RuntimeException e) {
-			System.out.println("not loaded");
 			// model cannot be loaded - create an empty smart home
 			smartHome = HalFactory.eINSTANCE.createSmartHome();
 			smartHome.setHomeName("My Smart Home");
